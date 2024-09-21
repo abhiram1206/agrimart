@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Sign Up</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <img src="../assets/login-f.png" alt="Farmer growing crops">
+        </div>
+        <div class="right-section">
+            <div class="form-container">
+                <h2 class="title" id="title">Your Experience Starts Here</h2>
+                <p class="subtitle" id="subtitle">Log in and take the first step toward healthier, farm-fresh choices.</p>
+               
+                <div class="tab-container">
+                    <button class="tab active" id="login-tab" onclick="switchTab('login')">Login</button>
+                    <button class="tab" id="signup-tab" onclick="switchTab('signup')">Sign up</button>
+                    <div class="highlight-bar" id="highlight-bar"></div>
+                </div>
+                
+                <!-- Login Form -->
+                <div id="login-form" class="form-content">
+                    <input type="text" id="login-email" placeholder="Email or Phone" required>
+                    <input type="password" id="login-password" placeholder="Password" required>
+                    <button onclick="login()">Login</button>
+                    <br><br>
+                    <p>or login with</p>
+                    <div class="social-login-container">
+                        <button class="social-login google-login">Login With Google</button>
+                        <button class="social-login fb-login">Login With Facebook</button>
+                    </div>
+                </div>
+                
+                <!-- Sign-up Form -->
+                <div id="signup-form" class="form-content hidden">
+                    <input type="text" id="signup-firstname" placeholder="First Name" required>
+                    <input type="text" id="signup-lastname" placeholder="Last Name" required>
+                    <input type="email" id="signup-email" placeholder="Email" required>
+                    <input type="text" id="signup-mobile" placeholder="Mobile Number" required>
+                    <input type="text" id="signup-city" placeholder="City" required>
+                    <input type="text" id="signup-nationality" value="Indian" readonly required>
+                    <input type="password" id="signup-password" placeholder="Password" required>
+                    <button onclick="signup()">Sign up</button>
+                    <p>or sign up with</p>
+                    <div class="social-login-container">
+                        <button class="social-login google-login">Sign up With Google</button>
+                        <button class="social-login fb-login">Sign up With Facebook</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>

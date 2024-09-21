@@ -118,13 +118,15 @@ nav {
 .nav-left .logged-user{
     display: none;
 }
-.auth-btn{
+.unlogged-user .auth-btn{
     color: #65A563;
     font-weight: 500;
+    border: 2px solid #fff;
 }
-.auth-btn:hover{
-    color: #65A563;
+.unlogged-user .auth-btn:hover{
+    color: #fff;
     font-weight: 500;
+    background-color: transparent;
 }
 .nav-left .unlogged-user .hidden{
     display: none;

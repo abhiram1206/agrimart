@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileProfileBtn.classList.remove('hidden');
     } else {
         signupBtn.classList.remove('hidden');
+        profileBtn.classList.remove('hidden');
         signinBtn.classList.remove('hidden');
         mobileSignupBtn.classList.remove('hidden');
         mobileSigninBtn.classList.remove('hidden');
@@ -51,4 +52,9 @@ function openDropdown() {
     } else {
         dropdown.style.display = 'none';
     }
+}
+
+function SignOut() {
+    localStorage.removeItem('access_token'); 
+    window.location.reload();
 }

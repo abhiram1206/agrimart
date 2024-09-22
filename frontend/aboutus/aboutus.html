@@ -7,8 +7,168 @@
     <link rel="stylesheet" href="aboutus.css">
 </head>
 <body>
-    <h1 class="about_us_heading">ABOUT US</h1>
-    <h3 class = "quote">A platform that connects farmers directly with customers at your Doorstep</h3>
-    <div class="sub_head"><h2>Who We Are</h2></div>
+    <nav>
+        <div class="nav-right">
+            <img src="../assets/logo-w.png" alt="">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="/">Marketplace</a></li>
+                <li><a href="/">Contact us</a></li>
+                <li><a href="./aboutus/aboutus.html">About us</a></li>
+            </ul>
+        </div>
+        <div class="nav-left">
+            <ul class="unlogged-user">
+                <li><a href="./auth/login.html" class="auth-btn" id="signup-btn"><img src="./assets/user-green.png" width="12" alt="">Sign Up</a></li>
+                <li><a href="./auth/login.html" class="auth-btn" id="signin-btn"><img src="./assets/user-green.png" width="12" alt="">Sign In</a></li>
+                <li><a href="/become-seller.html" class="hidden" id="become-seller-btn">Become a Seller</a></li>
+                <li><a href="/cart.html" class="hidden" id="cart-btn">Cart</a></li>
+                <li class="hidden" id="profile-btn">
+                    <img src="./assets/profile_icons.png" onclick="openDropdown()" style="margin-top: 5px;" width="30" alt="">
+                    <div class="dropdown" id="dropdown">
+                        <a href="#" class="dropdown-btn">Profile</a>
+                        <a href="#" class="dropdown-btn">Order History</a>
+                        <a href="#" class="dropdown-btn">Order Tracking</a>
+                        <a href="#" class="dropdown-btn" id="sign-out" onclick="SignOut()">Sign out</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </nav>
+    <div class="mobile-nav">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">Marketplace</a></li>
+            <li><a href="/">Contact us</a></li>
+            <li><a href="/">About us</a></li>
+            <li><a href="./auth/login.html" id="mobile-signup-btn">Sign Up</a></li>
+            <li><a href="./auth/login.html" id="mobile-signin-btn">Sign in</a></li>
+            <li><a href="/become-seller.html" class="hidden" id="mobile-become-seller-btn">Become a Seller</a></li>
+            <li><a href="/cart.html" class="hidden" id="mobile-cart-btn">Cart</a></li>
+            <li><a href="/profile.html" class="hidden" id="mobile-profile-btn">Profile</a></li>
+        </ul>
+    </div>
+    <div class="container-1">
+        <div class="about_us">
+            <h1 class="about_us_heading">ABOUT US</h1>
+            <h3 class = "quote">A platform that connects farmers directly with customers at your Doorstep</h3>
+
+        </div>
+        <div class="sub_head"><h2>Who We Are</h2></div>
+        <h3 class="quote who_we">Agrimart is a dedicated platform designed to bridge the gap between farmers and consumers, bringing fresh, high-quality produce directly from farms to your doorstep. Our mission is to empower local farmers by providing them with a fair and transparent marketplace while ensuring customers receive the freshest produce available. With a focus on sustainability, community support, and innovation, Agrimart is redefining the farm-to-table experience.</h3>
+        <div class="sub_head"><h2>Our Vision</h2></div>
+        <h3 class="quote who_we">To create a sustainable and transparent marketplace that empowers farmers, connects communities, and ensures access to fresh and healthy produce for all.</h3>
+        <div class="sub_head"><h2>Our Mission</h2></div>
+        <h3 class="quote who_we">To empower local farmers by providing a fair marketplace, deliver fresh produce directly to customers, and promote sustainable farming practices.</h3>
+        <div class="sub_head"><h2>Why Choose Us</h2></div>
+        <h3 class="quote who_we">Agrimart connects you directly with local farmers, delivering fresh, high-quality produce to your doorstep at the best prices. By eliminating middlemen, we ensure fair earnings for farmers while promoting sustainable and eco-friendly farming practices. Our easy-to-use platform makes ordering simple, supporting local communities and providing you with the freshest produce available.</h3>
+        <h1 class="what_cust">What Our Customers Say</h1>
+        <div class="people_rev">
+            <div class="box">
+                <div class="content">
+                    <img src="../assets/double-quotes (1).png" alt="">
+                    <h3>“FarmConnect has transformed how we buy groceries. Freshness guaranteed!”</h3>
+                </div>
+                <div class="det">
+                    <img src="../assets/man.png" alt="man">
+                    <div class="name">
+                        <h3>Alice Johnson</h3>
+                        <h4>Customer</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="content">
+                    <img src="../assets/double-quotes (1).png" alt="">
+                    <h3>“The quality of produce is unmatched. I love supporting local farmers!”</h3>
+                </div>
+                <div class="det">
+                    <img src="../assets/man.png" alt="man">
+                    <div class="name">
+                        <h3>John Smith</h3>
+                        <h4>Customer</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="content">
+                    <img src="../assets/double-quotes (1).png" alt="">
+                    <h3>“A fantastic platform that connects us directly with the source of our food.”</h3>
+                </div>
+                <div class="det">
+                    <img src="../assets/man.png" alt="man">
+                    <div class="name">
+                        <h3>Emily Davis</h3>
+                        <h4>Customer</h4>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+    <div class="footer">
+        <div class="foot_menu foot_div">
+            <h2>MENU</h2>
+            <h3>Home</h3>
+            <h3>Marketplace</h3>
+            <h3>Explore</h3>
+        </div>
+        <div class="foot_about foot_div">
+            <h2>ABOUT</h2>
+            <h3>Our Company</h3>
+            <h3>Our People</h3>
+            <h3>FAQ's</h3>
+        </div>
+        <div class="foot_legal foot_div">
+            <h2>LEGAL</h2>
+            <h3>Terms & Conditions</h3>
+            <h3>Privacy Policy</h3>
+            <h3>Cookies Policy</h3>
+        </div>
+        <div class="foot_contact foot_div">
+            <div class="foot_cont_det">
+                <div class="foot_cont_det-txt">
+                    <h2>CONTACT US</h2>
+                </div>
+                <div class="cot_det_cell">
+                    <img src="../assets/call.png" alt="contact">
+                    <h3>98667542100</h3>
+                </div>
+                <div class="cot_det_email">
+                    <img src="../assets/mail.png" alt="email">
+                    <h3>agrimart@gmail.com</h3>
+                </div>
+                <div class="cot_det_social">
+                    <div class="img">
+                        <img src="../assets/facebook-app-symbol.png" alt="facebook">
+                    </div>
+                    <div class="img">
+                        <img src="../assets/instagram.png" alt="instagram">
+                    </div>
+                    <div class="img">
+                        <img src="../assets/linkedin.png" alt="linkedin">
+                    </div>
+                    <div class="img">
+                        <img src="../assets/twitter.png" alt="twitter">
+                    </div>
+                    <div class="img">
+                        <img src="../assets/youtube.png" alt="youtube">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <img src="../assets/copyright.png" height="20px" width="20px" alt="copyright">
+        <h4>2024, Agrimart - All rights Reserved </h4>
+    </div>
+
+    <script src="./aboutus.js"></script>
+
 </body>
 </html>

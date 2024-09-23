@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become a Seller</title>
+    <link rel="stylesheet" href="BecomeSeller.css">
+</head>
+<body>
+    <div class="container">
+        <div class="container-1">
+            <img src="../assets/login-f.png" width="900" alt="">
+        </div>
+        <div class="container-2">
+            <section class="user-details-container">
+                <div class="user-details-wrapper active">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/12162ac454f8702b8a449fa40b33781f5b0c63ff90bbbb207c3d9a87f7b38ee1?placeholderIfAbsent=true&apiKey=68778a16b4eb4ec0a38860b2ef904f22" class="user-details-background" alt="">
+                    <div class="user-details-content">
+                        <div class="user-details-number">
+                            <div class="user-details-number-circle">1</div>
+                        </div>
+                        <h2 class="user-details-text">User Details</h2>
+                    </div>
+                </div>
+                <div class="user-details-wrapper">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/12162ac454f8702b8a449fa40b33781f5b0c63ff90bbbb207c3d9a87f7b38ee1?placeholderIfAbsent=true&apiKey=68778a16b4eb4ec0a38860b2ef904f22" class="user-details-background" alt="">
+                    <div class="user-details-content">
+                        <div class="user-details-number">
+                            <div class="user-details-number-circle">2</div>
+                        </div>
+                        <h2 class="user-details-text">Business Details</h2>
+                    </div>
+                </div>
+                <div class="user-details-wrapper">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/12162ac454f8702b8a449fa40b33781f5b0c63ff90bbbb207c3d9a87f7b38ee1?placeholderIfAbsent=true&apiKey=68778a16b4eb4ec0a38860b2ef904f22" class="user-details-background" alt="">
+                    <div class="user-details-content">
+                        <div class="user-details-number">
+                            <div class="user-details-number-circle">3</div>
+                        </div>
+                        <h2 class="user-details-text">Bank Details</h2>
+                    </div>
+                </div>
+            </section>
+
+            <!-- User Details Section -->
+            <section class="user-details details" id="user-details">
+                <div class="input-container">
+                    <div class="input">
+                        <label for="businessName">First Name</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="input">
+                        <label for="gstin">Last Name</label>
+                        <input type="text" required>
+                    </div>
+                </div>
+                
+                <div class="input-container">
+                    <div class="input">
+                        <label for="businessType">Mobile Number</label>
+                        <input type="text" required>
+                    </div>
+                </div>
+                <div class="input">
+                    <label for="panAadhar">Email</label>
+                    <input type="text" required>
+                </div>
+                
+                <div class="input">
+                    <label for="businessMobile">Alternative Email(optional)</label>
+                    <input type="text" required>
+                </div>
+                
+                <div class="input-container">
+                    <div class="input">
+                        <label for="addressLine1">Address Line 1</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="input">
+                        <label for="addressLine2">Address Line 2</label>
+                        <input type="text" required>
+                    </div>
+                </div>
+                
+                <!-- Additional input fields -->
+                <div class="input-container">
+                    <div class="input">
+                        <label for="state">Locality</label>
+                        <input type="text" required>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <div class="input">
+                        <label for="city">City</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="input">
+                        <label for="zip">ZIP Code</label>
+                        <input type="text" required>
+                    </div>
+                </div>
+                <button class="submit-btn" id="submit-btn">Submit</button>
+            </section>
+            <!-- Business Details Section -->
+            <section class="business-details details hidden" id="b-details">
+                <div class="input-container">
+                    <div class="input">
+                        <label for="businessName">Business Name</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="input">
+                        <label for="gstin">GSTIN No.</label>
+                        <input type="text" required>
+                    </div>
+                </div>
+                
+                <div class="input-container">
+                    <div class="input">
+                        <label for="businessType">Business Type</label>
+                        <input type="text" required>
+                    </div>
+                </div>
+                <div class="input">
+                    <label for="businessMobile">Pan Card/ Aadhar card</label>
+                    <input type="text" required>
+                </div>
+                <div class="input">
+                    <label for="businessMobile">Business Mobile Number</label>
+                    <input type="text" required>
+                </div>
+                
+                <div class="input-container">
+                    <div class="input">
+                        <label for="addressLine1">Business Address Line 1</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="input">
+                        <label for="addressLine2">Business Address Line 2</label>
+                        <input type="text" required>
+                    </div>
+                </div>
+            
+                <div class="input">
+                    <label for="businessMobile">Locality</label>
+                    <input type="text" required>
+                </div>
+
+                <div class="input-container">
+                    <div class="input">
+                        <label for="addressLine1">City</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="input">
+                        <label for="addressLine2">Pin Code</label>
+                        <input type="text" required>
+                    </div>
+                </div>
+                <button class="submit-btn" id="submit-business-btn">Submit</button>
+            </section>
+            
+
+            <!-- Bank Details Section -->
+            <section class="bank-details details hidden" id="bank-details">
+                <div class="input-container">
+                    <div class="input">
+                        <label for="accountNumber">Bank Name</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="input">
+                        <label for="accountName">Account Holder Name</label>
+                        <input type="text" required>
+                    </div>
+                </div>
+                <div class="input">
+                    <label for="ifsc">IFSC Code</label>
+                    <input type="text" required>
+                </div>
+                <div class="input">
+                    <label for="bankName">Bank Locality</label>
+                    <input type="text" required>
+                </div>
+                <div class="input-container">
+                    <div class="input">
+                        <label for="accountNumber">Account Number</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="input">
+                        <label for="accountName">Cvv</label>
+                        <input type="text" required>
+                    </div>
+                </div>
+                <div class="input">
+                    <label for="bankName">Expiry Date</label>
+                    <input type="text" required>
+                </div>
+                <button class="submit-btn" id="submit-bank-btn">Become a Seller</button>
+            </section>
+        </div>
+    </div>
+    <script src="./BecomeSeller.js"></script>
+</body>
+</html>

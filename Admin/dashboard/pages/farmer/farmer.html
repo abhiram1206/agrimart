@@ -3,9 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Admin/dashboard/pages/farmer/farmer.css">
     <title>Document</title>
 </head>
 <body>
-    welcome to farmer
+    <div class="container">
+        <div class="container-top">
+            <div class="search">
+                <img src="/Admin/assets/searchicon.png" alt="">
+                <input type="text" id="search" placeholder="Search">
+            </div>
+            <div class="filter">
+                <img src="/Admin/assets/Iconfiltericon.png" alt="">
+            </div>
+        </div>
+
+        <div class="main-table">
+            <table id="farmerTable" >
+                <thead >
+                    <tr>
+                        <th>Farmer Details</th>
+                        <th>Farmer Email</th>
+                        <th>No. of Orders Received</th>
+                        <th>Earned</th>
+                        <th>Joined At</th>
+                        <th>No. of Products</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                <tbody id="farmerTableBody"></tbody>
+            </table>
+            <div id="pagination"></div> <!-- For pagination controls -->
+        </div>
+        
+
+        <div class="pagination">
+            <button id="prevBtn" disabled>‹</button>
+            <ul id="pageNumbers"></ul>
+            <button id="nextBtn">›</button>
+        </div>
+    </div>
+    <script src="./farmer.js"></script>
 </body>
 </html>

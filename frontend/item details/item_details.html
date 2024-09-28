@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrimart - item details</title>
+    <link rel="shortcut icon" href="../assets/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="item_details.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-right">
+            <img src="../assets/logo-w.png" alt="">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="/">Marketplace</a></li>
+                <li><a href="/">Contact us</a></li>
+                <li><a href="#">About us</a></li>
+            </ul>
+        </div>
+        <div class="nav-left">
+            <ul class="unlogged-user">
+                <li><a href="./auth/login.html" class="auth-btn" id="signup-btn"><img src="../assets/user-green.png" width="12" alt="">Sign Up</a></li>
+                <li><a href="./auth/login.html" class="auth-btn" id="signin-btn"><img src="../assets/user-green.png" width="12" alt="">Sign In</a></li>
+                <li><a href="./BecomeSeller/BecomeSeller.html" class="hidden" id="become-seller-btn">Become a Seller</a></li>
+                <li><a href="/cart.html" class="hidden" id="cart-btn">Cart</a></li>
+                <li class="hidden" id="profile-btn">
+                    <img src="../assets/profile_icons.png" onclick="openDropdown()" style="margin-top: 5px;" width="30" alt="">
+                    <div class="dropdown" id="dropdown">
+                        <a href="#" class="dropdown-btn">Profile</a>
+                        <a href="#" class="dropdown-btn">Order History</a>
+                        <a href="#" class="dropdown-btn">Order Tracking</a>
+                        <a href="#" class="dropdown-btn" id="sign-out" onclick="SignOut()">Sign out</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </nav>
+    <div class="mobile-nav">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">Marketplace</a></li>
+            <li><a href="/">Contact us</a></li>
+            <li><a href="/">About us</a></li>
+            <li><a href="./auth/login.html" id="mobile-signup-btn">Sign Up</a></li>
+            <li><a href="./auth/login.html" id="mobile-signin-btn">Sign in</a></li>
+            <li><a href="./BecomeSeller/BecomeSeller.html" class="hidden" id="mobile-become-seller-btn">Become a Seller</a></li>
+            <li><a href="/cart.html" class="hidden" id="mobile-cart-btn">Cart</a></li>
+            <li><a href="/profile.html" class="hidden" id="mobile-profile-btn">Profile</a></li>
+        </ul>
+    </div>
+    <div class="section_items">
+        <div class="left_div">
+            <div class="big_img">
+                <img src="../assets/images 1.png" alt="">
+            </div>
+            <div class="small_imgs">
+                <img src="../assets/images 1.png" alt="">
+                <img src="../assets/images 1.png" alt="">
+                <img src="../assets/images 1.png" alt="">
+                <img src="../assets/images 1.png" alt="">
+            </div>
+        </div>
+        <div class="mid_div">
+            <div class="name">
+                <h2> Fresh Farm Grown Tomatoes</h2>
+                <img src="../assets/Group 150.png" alt="">
+            </div>
+            <div class="button">
+                <a href="#" style="color: white; text-decoration:none;"><h3>Quantity  + </h3></a>
+            </div>
+            <div class="price">
+                Your Price: ₹24.33 &nbsp; 
+                <span class="strikethrough">MRP: ₹30.00</span> &nbsp; 
+                Discount: 
+                <span class="bold">18%</span>
+            </div>
+            <hr>
+            <div class="item_det">
+                <div class="label"><h3>Diet Type</h3></div>
+                <div class="value"><h3>Vegetarian</h3></div>
+            </div>
+            
+            <div class="item_det">
+                <div class="label"><h3>Brand</h3></div>
+                <div class="value"><h3>Fresh</h3></div>
+            </div>
+            
+            <div class="item_det">
+                <div class="label"><h3>Item Weight</h3></div>
+                <div class="value"><h3>1Kg</h3></div>
+            </div>
+            <div class="about">
+                <h3>About this item</h3>
+                <ul>
+                    <li>100% Natural</li>
+                    <li>Good source of Vitamin A, C, K, Iron, Folate and Potassium</li>
+                    <li>Help to reduce Cholesterol</li>
+                </ul>
+            </div>
+        </div>
+        <div class="right_div">
+            <h3 class="date">Delivery by Thursday, 19 <br>September.</h3>
+            <div class="line2">
+                <h3 style="font-weight: bold;">Or fastest</h3>
+                <h3 style="font-weight: 500;">delivery Tomorrow, 18</h3>
+            </div>
+            <div class="line3">
+                <h3 style="font-weight: 500;">September.</h3>
+                <h3>Order within 28 mins.</h3>
+            </div>
+
+            <div class="location">
+                <img src="../assets/location-pin 1.png" alt="">
+                <h3 style="font-weight: 500;"> Delivering to New Delhi 110043 -</h3>
+            </div>
+            <h3 style="font-weight: 500; margin-left:30px">Update location</h3>
+            <h3 class="stock" style="font-weight: 600;">In stock</h3>
+            <div class="shipsfrom">
+                <h3 style="font-weight: 500; width:50%">Ships from</h3>
+                <h3 style="font-weight: 500; width:50%">Agrimart</h3>
+            </div>
+            <div class="shipsfrom">
+                <h3 style="font-weight: 500; width:50%">Sold by</h3>
+                <h3 style="font-weight: 500; width:50%">Darshita Etel</h3>
+            </div>
+            <div class="button button1">
+                <a href="#" style="color: white; text-decoration:none;"><h3>Buy now</h3></a>
+            </div>
+            <div class="addtocart">
+                <img src="../assets/Shopping cart.png" alt="add to cart">
+                <h4><a href="#" style="color: grey; text-decoration: none;">Add to Cart</a></h4>
+            </div>
+        </div>
+    </div>
+    <div class="viewall">
+        <h3 style="font-weight: 500;">Featured Products</h3>
+        <a href="#" style="text-decoration: none;"><h3 style="font-weight: 500; color:#5c885a">View all</h3></a>
+    </div>
+    <div class="rightmarketsection_2">
+        <div class="vegetable">
+            <div class="veg_st">
+                <h3 class="sale">Sale</h3>
+                <div class="fav">
+                    <img src="../assets/carbon_favorite.png" alt="">
+                </div>
+            </div>
+            <div class="tomato">
+                <img src="../assets/images 1.png" alt="tomatoes">
+            </div>
+            <h3 class="name_prd">Fresh Farm Grown Tomatoes</h3>
+            <h3 class="wt">1kg</h3>
+            <div class="farmer">
+                <h5>By</h5> 
+                <h5 class="blue">John Joe</h5>
+            </div>
+            <div class="review">
+                <img src="../assets/Group 187.png" alt="review">
+            </div>
+            <div class="chat">
+                <div class="no_rev">
+                    <img src="../assets/chat 1.png" alt="number of reviews">
+                    <h5>15 Reviews</h5>
+                </div>
+                <div class="cost">
+                    <h4>₹24.33</h4>
+                </div>
+            </div>
+            <div class="quantity">
+                <img src="../assets/ant-menu-submenu-arrow-down.png" alt="">
+                <h4 style="color: rgb(110, 108, 108);"><a href="#" style="color: grey; text-decoration: none;">Quantity</a></h4>
+            </div>
+            <div class="buynow">
+                <h3 class="sale buy_now"><a href="#" style="color: white; text-decoration: none;">Buy Now</a></h3>
+            </div>
+            <div class="addtocart">
+                <img src="../assets/Shopping cart.png" alt="add to cart">
+                <h4><a href="#" style="color: grey; text-decoration: none;">Add to Cart</a></h4>
+            </div>
+        </div>
+    
+        <!-- Replicate for each vegetable -->
+        <div class="vegetable">
+            <div class="veg_st">
+                <h3 class="sale">Sale</h3>
+                <div class="fav">
+                    <img src="../assets/carbon_favorite.png" alt="">
+                </div>
+            </div>
+            <div class="tomato">
+                <img src="../assets/images 1.png" alt="tomatoes">
+            </div>
+            <h3 class="name_prd">Fresh Farm Grown Tomatoes</h3>
+            <h3 class="wt">1kg</h3>
+            <div class="farmer">
+                <h5>By</h5> 
+                <h5 class="blue">John Joe</h5>
+            </div>
+            <div class="review">
+                <img src="../assets/Group 187.png" alt="review">
+            </div>
+            <div class="chat">
+                <div class="no_rev">
+                    <img src="../assets/chat 1.png" alt="number of reviews">
+                    <h5>15 Reviews</h5>
+                </div>
+                <div class="cost">
+                    <h4>₹24.33</h4>
+                </div>
+            </div>
+            <div class="quantity">
+                <img src="../assets/ant-menu-submenu-arrow-down.png" alt="">
+                <h4 style="color: rgb(110, 108, 108);"><a href="#" style="color: grey; text-decoration: none;">Quantity</a></h4>
+            </div>
+            <div class="buynow">
+                <h3 class="sale buy_now"><a href="#" style="color: white; text-decoration: none;">Buy Now</a></h3>
+            </div>
+            <div class="addtocart">
+                <img src="../assets/Shopping cart.png" alt="add to cart">
+                <h4><a href="#" style="color: grey; text-decoration: none;">Add to Cart</a></h4>
+            </div>
+        </div>
+
+        <div class="vegetable">
+            <div class="veg_st">
+                <h3 class="sale">Sale</h3>
+                <div class="fav">
+                    <img src="../assets/carbon_favorite.png" alt="">
+                </div>
+            </div>
+            <div class="tomato">
+                <img src="../assets/images 1.png" alt="tomatoes">
+            </div>
+            <h3 class="name_prd">Fresh Farm Grown Tomatoes</h3>
+            <h3 class="wt">1kg</h3>
+            <div class="farmer">
+                <h5>By</h5> 
+                <h5 class="blue">John Joe</h5>
+            </div>
+            <div class="review">
+                <img src="../assets/Group 187.png" alt="review">
+            </div>
+            <div class="chat">
+                <div class="no_rev">
+                    <img src="../assets/chat 1.png" alt="number of reviews">
+                    <h5>15 Reviews</h5>
+                </div>
+                <div class="cost">
+                    <h4>₹24.33</h4>
+                </div>
+            </div>
+            <div class="quantity">
+                <img src="../assets/ant-menu-submenu-arrow-down.png" alt="">
+                <h4 style="color: rgb(110, 108, 108);"><a href="#" style="color: grey; text-decoration: none;">Quantity</a></h4>
+            </div>
+            <div class="buynow">
+                <h3 class="sale buy_now"><a href="#" style="color: white; text-decoration: none;">Buy Now</a></h3>
+            </div>
+            <div class="addtocart">
+                <img src="../assets/Shopping cart.png" alt="add to cart">
+                <h4><a href="#" style="color: grey; text-decoration: none;">Add to Cart</a></h4>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

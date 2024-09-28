@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrimart - cart</title>
+    <link rel="shortcut icon" href="../assets/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-right">
+            <img src="../assets/logo-w.png" alt="">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="/">Marketplace</a></li>
+                <li><a href="/">Contact us</a></li>
+                <li><a href="#">About us</a></li>
+            </ul>
+        </div>
+        <div class="nav-left">
+            <!-- <ul class="unlogged-user">
+                 <li><a href="./auth/login.html" class="auth-btn" id="signup-btn"><img src="../assets/user-green.png" width="12" alt="">Sign Up</a></li>
+                <li><a href="./auth/login.html" class="auth-btn" id="signin-btn"><img src="../assets/user-green.png" width="12" alt="">Sign In</a></li> 
+                <li><a href="./BecomeSeller/BecomeSeller.html" class="hidden" id="become-seller-btn">Become a Seller</a></li>
+                <li><a href="/cart.html" class="hidden" id="cart-btn">Cart</a></li>
+                <li class="hidden" id="profile-btn">
+                    <img src="../assets/profile_icons.png" onclick="openDropdown()" style="margin-top: 5px;" width="30" alt="">
+                    <div class="dropdown" id="dropdown">
+                        <a href="#" class="dropdown-btn">Profile</a>
+                        <a href="#" class="dropdown-btn">Order History</a>
+                        <a href="#" class="dropdown-btn">Order Tracking</a>
+                        <a href="#" class="dropdown-btn" id="sign-out" onclick="SignOut()">Sign out</a>
+                    </div>
+                </li>
+            </ul>  -->
+            <a href="#" style="text-decoration: none; color:white">Become a Seller</a>
+            <a href="#" style="text-decoration: none; color:white">Cart</a>
+            <a href="#"><img src="../assets/profile-user 1.png" alt="profile"></a>
+        </div>
+        <div class="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </nav>
+    <div class="mobile-nav">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">Marketplace</a></li>
+            <li><a href="/">Contact us</a></li>
+            <li><a href="/">About us</a></li>
+            <li><a href="./auth/login.html" id="mobile-signup-btn">Sign Up</a></li>
+            <li><a href="./auth/login.html" id="mobile-signin-btn">Sign in</a></li>
+            <li><a href="./BecomeSeller/BecomeSeller.html" class="hidden" id="mobile-become-seller-btn">Become a Seller</a></li>
+            <li><a href="/cart.html" class="hidden" id="mobile-cart-btn">Cart</a></li>
+            <li><a href="/profile.html" class="hidden" id="mobile-profile-btn">Profile</a></li>
+        </ul>
+    </div>
+    <div class="div_cart">
+        <div class="cart-container">
+            <div class="cart-item">
+                <div class="item-info">
+                    <img src="../assets/images 1.png" alt="Tomato Image" class="item-img">
+                    <div class="item-details">
+                        <p class="item-name">Fresh Farm Grown Tomatoes...</p>
+                        <p class="item-price">₹370 <span class="item-mrp">M.R.P ₹400</span></p>
+                    </div>
+                </div>
+                <div class="item-actions">
+                    <button class="delete-btn" style="margin: 0 40px;"><img src="../assets/delete.png" alt=""></button>
+                </div>
+            </div>
+        
+            <div class="cart-item">
+                <div class="item-info">
+                    <img src="../assets/images 1.png" alt="Tomato Image" class="item-img">
+                    <div class="item-details">
+                        <p class="item-name">Fresh Farm Grown Tomatoes...</p>
+                        <p class="item-price">₹370 <span class="item-mrp">M.R.P ₹400</span></p>
+                    </div>
+                </div>
+                <div class="item-actions">
+                    <button class="delete-btn" style="margin: 0 40px;"><img src="../assets/delete.png" alt=""></button>
+                </div>
+            </div>
+
+            <div class="order-summary">
+                <div class="item">
+                    <h4>Items</h4>
+                    <span class="price">₹740.00</span>
+                </div>
+                <div class="item">
+                    <h4>Delivery</h4>
+                    <span class="price">₹120.00</span>
+                </div>
+                <div class="item1">
+                    <h3>Order Total</h3>
+                    <span class="price1"><h3>₹860.00</h3></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="add_address">
+        <div class="add">
+            <h3 style="color: #45a049; text-align:center; padding:30px">+  Add Address</h3>
+        </div>
+        <div class="div_radio">
+            <form class="address">
+                <label>
+                    <input type="radio" name="address" value="1571">
+                    #1571, 1st main, 3rd cross, AECS Layout, Kundanahalli, Bangalore, Karnataka - 560037
+                </label>
+                <label>
+                    <input type="radio" name="address" value="1571">
+                    #23-9/5, EswardeviNagar, Salipeta, Pedagadili, Visakhapatnam - 530040
+                </label>
+            </form>
+        </div>
+    </div>
+
+    <div class="add_address">
+        <div class="add">
+            <h3 style="color: #45a049; text-align:center; padding:30px">Payment Mode</h3>
+        </div>
+        <div class="div_radio">
+            <form class="payment">
+                <label>
+                    <input type="radio" name="address" value="1571">
+                    Card
+                </label>
+                <label>
+                    <input type="radio" name="address" value="1571">
+                    UPI
+                </label>
+                <label>
+                    <input type="radio" name="address" value="1571">
+                    Cash on Delivery
+                </label>
+            </form>
+        </div>
+    </div>
+
+    <div class="checkout">
+        <button class="checkout-btn">Pay</button>
+    </div>

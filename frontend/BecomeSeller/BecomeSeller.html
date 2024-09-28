@@ -42,161 +42,184 @@
                 </div>
             </section>
 
-            <!-- User Details Section -->
             <section class="user-details details" id="user-details">
                 <div class="input-container">
                     <div class="input">
-                        <label for="businessName">First Name</label>
-                        <input type="text" required>
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" required>
+                        <small class="error-message" id="error-firstName"></small>
                     </div>
                     <div class="input">
-                        <label for="gstin">Last Name</label>
-                        <input type="text" required>
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" required>
+                        <small class="error-message" id="error-lastName"></small>
                     </div>
                 </div>
                 
                 <div class="input-container">
                     <div class="input">
-                        <label for="businessType">Mobile Number</label>
-                        <input type="text" required>
+                        <label for="mobileNumber">Mobile Number</label>
+                        <input type="text" id="mobileNumber" required>
+                        <small class="error-message" id="error-mobileNumber"></small>
                     </div>
                 </div>
                 <div class="input">
-                    <label for="panAadhar">Email</label>
-                    <input type="text" required>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                    <small class="error-message" id="error-email"></small>
                 </div>
                 
                 <div class="input">
-                    <label for="businessMobile">Alternative Email(optional)</label>
-                    <input type="text" required>
+                    <label for="alternativeEmail">Alternative Email (optional)</label>
+                    <input type="email" id="alternativeEmail">
+                    <small class="error-message" id="error-alternativeEmail"></small>
                 </div>
                 
                 <div class="input-container">
                     <div class="input">
                         <label for="addressLine1">Address Line 1</label>
-                        <input type="text" required>
+                        <input type="text" id="addressLine1" required>
+                        <small class="error-message" id="error-addressLine1"></small>
                     </div>
                     <div class="input">
                         <label for="addressLine2">Address Line 2</label>
-                        <input type="text" required>
+                        <input type="text" id="addressLine2" required>
+                        <small class="error-message" id="error-addressLine2"></small>
                     </div>
                 </div>
                 
                 <!-- Additional input fields -->
                 <div class="input-container">
                     <div class="input">
-                        <label for="state">Locality</label>
-                        <input type="text" required>
+                        <label for="locality">Locality</label>
+                        <input type="text" id="locality" required>
+                        <small class="error-message" id="error-locality"></small>
                     </div>
                 </div>
                 <div class="input-container">
                     <div class="input">
                         <label for="city">City</label>
-                        <input type="text" required>
+                        <input type="text" id="city" required>
+                        <small class="error-message" id="error-city"></small>
                     </div>
                     <div class="input">
                         <label for="zip">ZIP Code</label>
-                        <input type="text" required>
+                        <input type="text" id="zip" required>
+                        <small class="error-message" id="error-zip"></small>
                     </div>
                 </div>
                 <button class="submit-btn" id="submit-btn">Submit</button>
             </section>
-            <!-- Business Details Section -->
             <section class="business-details details hidden" id="b-details">
                 <div class="input-container">
                     <div class="input">
                         <label for="businessName">Business Name</label>
-                        <input type="text" required>
+                        <input type="text" id="businessName" required>
+                        <small class="error-message" id="error-firstName"></small>
                     </div>
                     <div class="input">
                         <label for="gstin">GSTIN No.</label>
-                        <input type="text" required>
+                        <input type="text" id="gstin" required>
+                        <small class="error-message" id="error-firstName"></small>
                     </div>
                 </div>
                 
                 <div class="input-container">
                     <div class="input">
                         <label for="businessType">Business Type</label>
-                        <input type="text" required>
+                        <input type="text" id="businessType" required>
+                        <small class="error-message" id="error-firstName"></small>
                     </div>
                 </div>
                 <div class="input">
-                    <label for="businessMobile">Pan Card/ Aadhar card</label>
-                    <input type="text" required>
+                    <label for="panOrAadhar">Pan Card/ Aadhar card</label>
+                    <input type="text" id="panOrAadhar" required>
+                    <small class="error-message" id="error-firstName"></small>
                 </div>
                 <div class="input">
                     <label for="businessMobile">Business Mobile Number</label>
-                    <input type="text" required>
+                    <input type="text" id="businessMobile" required>
+                    <small class="error-message" id="error-firstName"></small>
                 </div>
                 
                 <div class="input-container">
                     <div class="input">
                         <label for="addressLine1">Business Address Line 1</label>
-                        <input type="text" required>
+                        <input type="text" id="addressLine1" required>
+                        <small class="error-message" id="error-firstName"></small>
                     </div>
                     <div class="input">
                         <label for="addressLine2">Business Address Line 2</label>
-                        <input type="text" required>
+                        <input type="text" id="addressLine2" required>
+                        <small class="error-message" id="error-firstName"></small>
                     </div>
                 </div>
-            
+                
                 <div class="input">
-                    <label for="businessMobile">Locality</label>
-                    <input type="text" required>
+                    <label for="Locality">Locality</label>
+                    <input type="text" id="Locality" required>
+                    <small class="error-message" id="error-firstName"></small>
                 </div>
-
+                
                 <div class="input-container">
                     <div class="input">
-                        <label for="addressLine1">City</label>
-                        <input type="text" required>
+                        <label for="City">City</label>
+                        <input type="text" id="City" required>
+                        <small class="error-message" id="error-firstName"></small>
                     </div>
                     <div class="input">
-                        <label for="addressLine2">Pin Code</label>
-                        <input type="text" required>
+                        <label for="zip">Pin Code</label>
+                        <input type="text" id="zip" required>
+                        <small class="error-message" id="error-firstName"></small>
                     </div>
                 </div>
                 <button class="submit-btn" id="submit-business-btn">Submit</button>
             </section>
-            
-
-            <!-- Bank Details Section -->
             <section class="bank-details details hidden" id="bank-details">
                 <div class="input-container">
                     <div class="input">
-                        <label for="accountNumber">Bank Name</label>
-                        <input type="text" required>
+                        <label for="accountName">Bank Name</label>
+                        <input type="text" id="accountName" required>
+                        <small class="error-message" id="error-firstName"></small>
                     </div>
                     <div class="input">
-                        <label for="accountName">Account Holder Name</label>
-                        <input type="text" required>
+                        <label for="accountHolderName">Account Holder Name</label>
+                        <input type="text" id="accountHolderName" required>
+                        <small class="error-message" id="error-firstName"></small>
                     </div>
                 </div>
                 <div class="input">
                     <label for="ifsc">IFSC Code</label>
-                    <input type="text" required>
+                    <input type="text"  id="ifsc" required>
+                    <small class="error-message" id="error-firstName"></small>
                 </div>
                 <div class="input">
-                    <label for="bankName">Bank Locality</label>
-                    <input type="text" required>
+                    <label for="bankLocality">Bank Locality</label>
+                    <input type="text" id="bankLocality" required>
+                    <small class="error-message" id="error-firstName"></small>
                 </div>
                 <div class="input-container">
                     <div class="input">
                         <label for="accountNumber">Account Number</label>
-                        <input type="text" required>
+                        <input type="text" id="accountNumber" required>
+                        <small class="error-message" id="error-firstName"></small>
                     </div>
                     <div class="input">
-                        <label for="accountName">Cvv</label>
-                        <input type="text" required>
+                        <label for="cvv">Cvv</label>
+                        <input type="text" id="cvv" required>
+                        <small class="error-message" id="error-firstName"></small>
                     </div>
                 </div>
                 <div class="input">
-                    <label for="bankName">Expiry Date</label>
-                    <input type="text" required>
+                    <label for="expiryDate">Expiry Date</label>
+                    <input type="text" id="expiryDate" required>
+                    <small class="error-message" id="error-firstName"></small>
                 </div>
                 <button class="submit-btn" id="submit-bank-btn">Become a Seller</button>
             </section>
         </div>
     </div>
+    
     <script src="./BecomeSeller.js"></script>
 </body>
 </html>

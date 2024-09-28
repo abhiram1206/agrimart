@@ -6,6 +6,7 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import authRouter from './routes/authRoute.js';
 import userAuthRouter from './routes/userAuthRoute.js';
+import sellerRoute from './routes/sellerRoute.js';
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use(express.static('public'));
 
 app.use('/auth', authRouter);
 app.use('/userauth', userAuthRouter)
+app.use('/seller', sellerRoute)
 
 mongoose.connect(process.env.MONGODB_SERVER_PORT, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => app.listen(process.env.SERVER_PORT))

@@ -70,12 +70,19 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(html => {
                 mainContent.innerHTML = html;
+    
+                // Manually add the external JavaScript after loading the HTML
+                const script = document.createElement('script');
+                script.src = `/Admin/dashboard/pages/${page}/${page}.js`; // Adjust the path based on your project structure
+                script.type = 'text/javascript';
+                document.body.appendChild(script);  // Or append to mainContent depending on where you want it
             })
             .catch(error => {
                 mainContent.innerHTML = '<h1>Error loading page</h1><p>There was an error loading the page.</p>';
                 console.error('Error:', error);
             });
     }
+    
 
     // Set the default page to 'home' on initial load
     loadPage('home');

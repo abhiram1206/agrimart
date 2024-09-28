@@ -1,0 +1,216 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-top {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.search {
+    display: flex;
+    flex-direction: row;
+    background-color: #373737;
+    padding: 15px;
+    gap: 10px;
+    border-radius: 30px;
+    width: 100%; 
+}
+
+.search input {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    width: 100%; 
+    font-size: 16px;
+    color: white;
+}
+
+.filter {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #373737;
+    border-radius: 50%;
+}
+
+/* table design starts here */
+.main-table {
+    width: 100%;
+    overflow-x: auto; 
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    table-layout: auto; 
+}
+
+th, td {
+    padding: 20px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+th {
+    background-color: #68952D;
+    color: white;
+    font-weight: bold;
+}
+
+td {
+    color: #fff;
+    background-color: #242424;
+}
+
+td button.edit-btn {
+    background-color: #68952D;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+td button.edit-btn:hover {
+    background-color: #6f9440;
+}
+
+.main-table {
+    overflow-x: auto;
+    margin: 0;
+}
+
+/* Pagination design starts here */
+.pagination {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+}
+
+.pagination button {                                                                                                                                                                                                                                                                                                                                                                                
+    color: white;
+    border: none;
+    background-color: transparent;
+    border-radius: 4px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.pagination span {
+    font-size: 20px;
+    color: #444;
+}
+
+.pagination ul{
+    padding: 0;
+}
+
+
+@media (max-width: 1232px) {
+    th, td {
+        padding: 10px 12px;
+        font-size: 12px; 
+    }
+
+    td button.edit-btn {
+        padding: 5px 10px;
+        font-size: 10px;
+    }
+}
+@media (max-width: 960px) {
+    th, td {
+        padding: 10px 12px;
+        font-size: 8px; 
+    }
+
+    td button.edit-btn {
+        padding: 5px 10px;
+        font-size: 6px;
+    }
+}
+
+@media (max-width: 768px) {
+    th, td {
+        padding: 10px 12px;
+        font-size: 7px;
+    }
+
+    td button.edit-btn {
+        padding: 5px 10px;
+        font-size: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    th, td {
+        padding: 8px 10px;
+        font-size: 7px; 
+    }
+
+    td button.edit-btn {
+        padding: 4px 8px;
+        font-size: 5px;
+    }
+
+    .main-table {
+        width: 100%;
+        overflow-x: auto;
+        padding:  0;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    th, td {
+        white-space: nowrap; 
+    }
+}
+
+::-webkit-scrollbar {
+    height: 5px; 
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #2b2b2b;
+    border-radius: 20px;
+}
+
+
+@media (max-width: 768px) {
+    .search {
+        width: 100%; 
+        padding: 10px;
+    }
+
+    .search input {
+        font-size: 14px; 
+    }
+
+    .filter {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .search {
+        width: 100%; 
+    }
+
+    .search input {
+        font-size: 12px; 
+    }
+
+    .filter {
+        padding: 8px; 
+    }
+}

@@ -44,6 +44,10 @@ const UserSchema = new Schema({
             return `https://api.dicebear.com/6.x/${profile_image_collection_list[Math.floor(Math.random() * profile_image_collection_list.length)]}/svg?seed=${profile_image_name_list[Math.floor(Math.random() * profile_image_name_list.length)]}`
         }
     },
+    sellerId: { 
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'Seller' 
+    }
 },{
     timestamps: {
         createdAt: 'joinedAt'

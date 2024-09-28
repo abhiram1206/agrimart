@@ -40,7 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (data.success) {
                 localStorage.setItem('access_token', data.token);
-                window.location.href = '../main.html'; // Redirect to home page after login
+                localStorage.setItem('userId', data.userId);
+                localStorage.setItem('email', data.email);
+                localStorage.setItem('mobile', data.mobile);
+                window.location.href = '../main.html'; 
             } else {
                 alert(data.error);
             }
@@ -70,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (data.success) {
                 localStorage.setItem('access_token', data.token);
-                window.location.href = '/home'; // Redirect to home page after signup
+                window.location.href = '../main.html';
             } else {
                 alert(data.error);
             }

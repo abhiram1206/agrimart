@@ -15,6 +15,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+
 const signupUser = async (req, res) => {
   const { FirstName, LastName, email, MobileNum, City, password } = req.body;
 
@@ -51,7 +52,13 @@ const signupUser = async (req, res) => {
 
     const token = jwt.sign({ userId: newUser._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
 
-    return res.status(201).json({ success: true, token });
+    return res.status(201).json({
+      success: true,
+      token,
+      userId: newUser._id,
+      email: newUser.email,
+      mobile: newUser.MobileNum,
+    });
   } catch (error) {
     return res.status(500).json({ success: false, error: error.message });
   }
@@ -75,7 +82,13 @@ const loginUser = async (req, res) => {
 
     const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
 
-    return res.status(200).json({ success: true, token });
+    return res.status(200).json({
+      success: true,
+      token,
+      userId: user._id,
+      email: user.email,
+      mobile: user.MobileNum,
+    });
   } catch (error) {
     return res.status(500).json({ success: false, error: error.message });
   }

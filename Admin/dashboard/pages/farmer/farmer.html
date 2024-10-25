@@ -13,8 +13,17 @@
                 <img src="/Admin/assets/searchicon.png" alt="">
                 <input type="text" id="search" placeholder="Search">
             </div>
-            <div class="filter">
+            <div class="filter" id="filterButton">
                 <img src="/Admin/assets/Iconfiltericon.png" alt="">
+            </div>
+        </div>
+
+        <div class="filter-section" id="filterSection" style="display: none;">
+            <p>Filter Options:</p>
+            <label for="sortBy">Sort By:</label>
+            <input type="datetime-local" class="sortBy">
+            <div class="btn">
+                <button id="applyFilter">Apply</button>
             </div>
         </div>
 
@@ -28,10 +37,11 @@
                         <th>Earned</th>
                         <th>Joined At</th>
                         <th>No. of Products</th>
-                        <th>Edit</th>
+                        <th></th>
                     </tr>
                 </thead>
-                <tbody id="farmerTableBody"></tbody>
+                <tbody id="farmerTableBody">
+                </tbody>
             </table>
             <div id="pagination"></div> <!-- For pagination controls -->
         </div>
@@ -39,7 +49,7 @@
 
         <div class="pagination">
             <button id="prevBtn" disabled>‹</button>
-            <ul id="pageNumbers"></ul>
+            <ul id="pageNumbers">1</ul>
             <button id="nextBtn">›</button>
         </div>
     </div>

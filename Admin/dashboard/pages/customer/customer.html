@@ -3,9 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/Admin/dashboard/pages/customer/customer.css">
+    <link rel="stylesheet" href="/Admin/dashboard/pages/customer/popup.css">
+    <title>Customer Management</title>
 </head>
 <body>
-    welcome to customer
+    <div class="container">
+        <div class="container-top">
+            <div class="search">
+                <img src="/Admin/assets/searchicon.png" alt="">
+                <input type="text" id="search" placeholder="Search">
+            </div>
+            <div class="filter" id="filterButton">
+                <img src="/Admin/assets/Iconfiltericon.png" alt="">
+            </div>
+        </div>
+
+        <div class="filter-section" id="filterSection" style="display: none;">
+            <p>Filter Options:</p>
+            <div class="city-filter filter">
+                <p>City</p>
+                <div class="checkbox"></div>
+            </div>
+            <div class="status-filter filter">
+                <p>Status</p>
+                <div class="checkbox"></div>
+            </div>
+        </div>
+
+        <div class="main-table">
+            <table id="farmerTable">
+                <thead>
+                    <tr>
+                        <th>Customer Details</th>
+                        <th>Customer Email</th>
+                        <th>Mobile Number</th>
+                        <th>No. of Orders</th>
+                        <th>Spent</th>
+                        <th>Joined Date</th>
+                        <th>Active Status</th>
+                    </tr>
+                </thead>
+                <tbody id="customerDataTable"></tbody>
+            </table>
+            <div id="pagination"></div>
+        </div>
+
+        <div class="pagination">
+            <button id="prevBtn" disabled>‹</button>
+            <ul id="pageNumbers"></ul>
+            <button id="nextBtn">›</button>
+        </div>
+
+        <!-- Popup for displaying user details -->
+        <div class="overlay" id="overlay"></div>
+        <div class="popup" id="customerPopup">
+            <div class="popup-header">
+                <button class="close-btn" id="closePopup">×</button>
+            </div>
+            <div class="popup-content">
+                <div class="popup-content-left">
+                    <div class="profile card">
+                        <div class="person-status">
+                            <p id="popupCustomerStatus"></p>
+                        </div>
+                        <div class="profile-top">
+                            <img id="popupCustomerImage" src="" alt="Profile Image" class="popup-profile-img">
+                            <p><span id="popupCustomerName"></span></p>
+                        </div>
+                        <div class="profile-middle">
+                            <p><img src="/Admin/assets/email 1 (1).png" alt=""><span id="popupCustomerEmail"></span></p>
+                            <p><img src="/Admin/assets/phone-call 1 (1).png" alt=""><span id="popupCustomerCity"></span></p>
+                            <p><img src="/Admin/assets/location 1.png" alt=""><span id="popupCustomerMobile"></span></p>
+                        </div>
+                        <button class="edit-btn">Edit profile <img src="/Admin/assets/share 1 (1).png" alt=""></button>
+                    </div>
+                    <div class="address card">
+                        <h2>Address</h2>
+                        <div class="address-card-details">
+                            <div class="details">
+                                <h5>John Doe</h5>
+                                <h5>+91 8660360712</h5>
+                                <p>#1571, 1st cross, 3rd main,
+                                    AECS layout, kundanahalli,
+                                    Bangalore-560037
+                                </p>
+                            </div>
+                            <hr>
+                            <div class="details">
+                                <h5>John Doe</h5>
+                                <h5>+91 8660360712</h5>
+                                <p>#1571, 1st cross, 3rd main,
+                                    AECS layout, kundanahalli,
+                                    Bangalore-560037
+                                </p>
+                            </div>
+                            <hr>
+                            <div class="details">
+                                <h5>John Doe</h5>
+                                <h5>+91 8660360712</h5>
+                                <p>#1571, 1st cross, 3rd main,
+                                    AECS layout, kundanahalli,
+                                    Bangalore-560037
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup-content-right">
+                    <div class="stats-1">
+                        <div class="stats-1-card">
+                            <div class="stats-1-card-1">
+                                <p>Today’s Sales</p>
+                                <h1>₹55,000</h1>
+                            </div>
+                            <div class="img">
+                                <img src="/Admin/assets/business-and-finance2.png" alt="">
+                            </div>
+                        </div>
+                        <div class="stats-1-card">
+                            <div class="stats-1-card-1">
+                                <p>Today’s Sales</p>
+                                <h1>₹55,000</h1>
+                            </div>
+                            <div class="img">
+                                <img src="/Admin/assets/business-and-finance2.png" alt="">
+                            </div>
+                        </div>
+                        <div class="stats-1-card">
+                            <div class="stats-1-card-1">
+                                <p>Today’s Sales</p>
+                                <h1>₹55,000</h1>
+                            </div>
+                            <div class="img">
+                                <img src="/Admin/assets/business-and-finance2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="orders-table">
+                        <div class="main-table">
+                            <table id="orderTable" >
+                                <thead >
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Delivery Status</th>
+                                        <th>Ordered Product</th>
+                                        <th>Quantity</th>
+                                        <th>Seller Name</th>
+                                        <th>Payment Status</th>
+                                        <th>Ordered Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="OrderDataTable"></tbody>
+                            </table>
+                            <div id="pagination"></div>
+                        </div>
+                        
+                
+                        <div class="pagination">
+                            <button id="orderPrevBtn" disabled>‹</button>
+                            <ul id="orderPageNumbers"></ul>
+                            <button id="orderNextBtn">›</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="./customer.js"></script>
+    </div>
 </body>
 </html>

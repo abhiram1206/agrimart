@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="dashboard.css">
-    <title>Dashboard</title>
+    <link rel="stylesheet" href="./dashboard.css">
+    <title>Agrimart - Admin Panel</title>
 </head>
 <body>
     <nav class="navbar">
@@ -21,19 +21,25 @@
             <button id="signout-btn">Sign Out</button>
         </div>
     </nav>
+
     <div class="content">
         <div class="sidebar">
-            <img src="../assets/dashboard.png" alt="" class="active" data-page="home">
-            <img src="../assets/customer.png" alt="" data-page="customer">
-            <img src="../assets/farmer (1).png" alt="" data-page="farmer">
-            <img src="../assets/order.png" alt="" data-page="order">
-            <img src="../assets/checkout.png" alt="" data-page="checkout">
-            <img src="../assets/asking.png" alt="" data-page="asking">
-            <img src="../assets/question (1).png" alt="" data-page="questions">
+            <img src="../assets/dashboard.png" alt="Dashboard" class="active" data-page="home">
+            <img src="../assets/customer.png" alt="Customer" data-page="customer">
+            <img src="../assets/farmer (1).png" alt="Farmer" data-page="farmer">
+            <img src="../assets/order.png" alt="Products" data-page="products">
+            <img src="../assets/checkout.png" alt="Orders" data-page="orders">
+            <img src="../assets/asking.png" alt="Asking" data-page="asking">
+            <img src="../assets/question (1).png" alt="Questions" data-page="questions">
         </div>
-        <div class="main-content" style="width: 100%">
+
+        <!-- Iframe for dynamic content -->
+        <div class="main-content">
+            <div id="content"></div>
         </div>
+        
     </div>
+
     <script src="./dashboard.js"></script>
 </body>
 </html>

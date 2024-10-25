@@ -94,4 +94,14 @@ const loginUser = async (req, res) => {
   }
 };
 
-export { signupUser, loginUser };
+const getUser = async(req,res)=>{
+  try {
+    const user = await UserModel.find({})
+    return res.status(200).json({success: true, data: user})
+  } catch (error) {
+    return res.status(500).json({ success: false, error: error.message });
+  }
+}
+
+
+export { signupUser, loginUser, getUser };

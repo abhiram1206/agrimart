@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Admin/dashboard/pages/orders/orders.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="container-top">
+            <div class="search">
+                <img src="/Admin/assets/searchicon.png" alt="">
+                <input type="text" id="search" placeholder="Search">
+            </div>
+            <div class="filter" id="filterButton">
+                <img src="/Admin/assets/Iconfiltericon.png" alt="">
+            </div>
+        </div>
+
+        <div class="filter-section" id="filterSection" style="display: none;">
+            <p>Filter Options:</p>
+            <div class="product-filter filter">
+                <p>Prodcut</p>
+                <div class="checkbox">
+                </div>
+            </div>
+            <div class="joined">
+                <p>Joined At</p>
+                <input type="datetime-local" class="sortBy">
+            </div>
+            <div class="btn">
+                <button id="applyFilter">Apply</button>
+            </div>
+        </div>
+
+        <div class="main-table">
+            <table id="orderTable" >
+                <thead >
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Delivery Status</th>
+                        <th>Ordered Product</th>
+                        <th>Quantity</th>
+                        <th>Seller Name</th>
+                        <th>Payment Status</th>
+                        <th>Ordered Date</th>
+                    </tr>
+                </thead>
+                <tbody id="OrderDataTable">
+                    <tr>
+                        <td>Order 1001</td>
+                        <td><p class='Completed'>Completed</p></td>
+                        <td>Fresh Farm Grown Tomatoes 1kg</td>
+                        <td>2kgs</td>
+                        <td>Shawn</td>
+                        <td><p class='Recieved'>Recieved</p></td>
+                        <td><p class="date-joined">21st Aug 2024, 07:00 PM</p></td>
+                    </tr>
+                    <tr>
+                        <td>Order 1001</td>
+                        <td><p class='Completed'>Completed</p></td>
+                        <td>Fresh Farm Grown Tomatoes 1kg</td>
+                        <td>2kgs</td>
+                        <td>Shawn</td>
+                        <td><p class='Recieved'>Recieved</p></td>
+                        <td><p class="date-joined">21st Aug 2024, 07:00 PM</p></td>
+                    </tr>
+                    <tr>
+                        <td>Order 1001</td>
+                        <td><p class='Completed'>Completed</p></td>
+                        <td>Fresh Farm Grown Tomatoes 1kg</td>
+                        <td>2kgs</td>
+                        <td>Shawn</td>
+                        <td><p class='Recieved'>Recieved</p></td>
+                        <td><p class="date-joined">21st Aug 2024, 07:00 PM</p></td>
+                    </tr>
+                    <tr>
+                        <td>Order 1001</td>
+                        <td><p class='Completed'>Completed</p></td>
+                        <td>Fresh Farm Grown Tomatoes 1kg</td>
+                        <td>2kgs</td>
+                        <td>Shawn</td>
+                        <td><p class='Recieved'>Recieved</p></td>
+                        <td><p class="date-joined">21st Aug 2024, 07:00 PM</p></td>
+                    </tr>
+                    <tr>
+                        <td>Order 1001</td>
+                        <td><p class='Completed'>Completed</p></td>
+                        <td>Fresh Farm Grown Tomatoes 1kg</td>
+                        <td>2kgs</td>
+                        <td>Shawn</td>
+                        <td><p class='Recieved'>Recieved</p></td>
+                        <td><p class="date-joined">21st Aug 2024, 07:00 PM</p></td>
+                    </tr>
+                    <tr>
+                        <td>Order 1001</td>
+                        <td><p class='Completed'>Completed</p></td>
+                        <td>Fresh Farm Grown Tomatoes 1kg</td>
+                        <td>2kgs</td>
+                        <td>Shawn</td>
+                        <td><p class='Recieved'>Recieved</p></td>
+                        <td><p class="date-joined">21st Aug 2024, 07:00 PM</p></td>
+                    </tr>
+                    <tr>
+                        <td>Order 1001</td>
+                        <td><p class='Completed'>Completed</p></td>
+                        <td>Fresh Farm Grown Tomatoes 1kg</td>
+                        <td>2kgs</td>
+                        <td>Shawn</td>
+                        <td><p class='Recieved'>Recieved</p></td>
+                        <td><p class="date-joined">21st Aug 2024, 07:00 PM</p></td>
+                    </tr>
+                    <tr>
+                        <td>Order 1001</td>
+                        <td><p class='Completed'>Completed</p></td>
+                        <td>Fresh Farm Grown Tomatoes 1kg</td>
+                        <td>2kgs</td>
+                        <td>Shawn</td>
+                        <td><p class='Recieved'>Recieved</p></td>
+                        <td><p class="date-joined">21st Aug 2024, 07:00 PM</p></td>
+                    </tr>
+                    <tr>
+                        <td>Order 1001</td>
+                        <td><p class='Completed'>Completed</p></td>
+                        <td>Fresh Farm Grown Tomatoes 1kg</td>
+                        <td>2kgs</td>
+                        <td>Shawn</td>
+                        <td><p class='Recieved'>Recieved</p></td>
+                        <td><p class="date-joined">21st Aug 2024, 07:00 PM</p></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="pagination"></div>
+        </div>
+        
+
+        <div class="pagination">
+            <button id="prevBtn" disabled>‹</button>
+            <ul id="pageNumbers"></ul>
+            <button id="nextBtn">›</button>
+        </div>
+    </div>
+    <script src="./orders.js"></script>
+</body>
+</html>

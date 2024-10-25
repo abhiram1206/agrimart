@@ -1,16 +1,19 @@
-window.onload = function() {
+window.onload = function () {
     const token = localStorage.getItem('token');
     if (!token) {
         window.location.href = '../login/login.html';
     }
+
     const profileImage = localStorage.getItem('profile_img');
     if (profileImage) {
         document.getElementById('profile').src = profileImage;
     }
+
     const name = localStorage.getItem('AdminName');
     if (name) {
         document.getElementById('name').innerHTML = name;
     }
+
     const email = localStorage.getItem('AdminEmail');
     if (email) {
         document.getElementById('email').innerHTML = email;
@@ -22,70 +25,70 @@ document.getElementById("signout-btn").addEventListener("click", function () {
     localStorage.removeItem('AdminName');
     localStorage.removeItem('AdminEmail');
     localStorage.removeItem('profile_img');
-
     window.location.href = '../login/login.html';
 });
 
 const sidebarItems = document.querySelectorAll('.sidebar img');
+const contentDiv = document.getElementById('content'); // Target div for content
 
+// Remove 'active' class from all sidebar items
 function removeActiveClass() {
-    sidebarItems.forEach(item => {
-        item.classList.remove('active');
-    });
+    sidebarItems.forEach(item => item.classList.remove('active'));
 }
 
+// Function to dynamically load JS after loading HTML
+function loadJS(jsFile) {
+    const existingScript = document.getElementById('dynamic-js');
+    if (existingScript) {
+        existingScript.remove();  // Remove the old script if exists
+    }
+
+    // Create and append the new script dynamically
+    const script = document.createElement('script');
+    script.src = jsFile;
+    script.id = 'dynamic-js';
+    script.onload = () => {
+        console.log(`${jsFile} loaded`);
+    };
+    document.body.appendChild(script);
+}
+
+// Function to load the HTML content dynamically
+function loadContent(page) {
+    fetch(`./pages/${page}/${page}.html`)
+        .then(response => response.text())
+        .then(htmlContent => {
+            contentDiv.innerHTML = htmlContent;
+
+            // Now that HTML is loaded, load and run the corresponding JavaScript
+            const jsFile = `./pages/${page}/${page}.js`;
+            fetch(jsFile)
+                .then(response => response.text())
+                .then(jsContent => {
+                    // Ensure the JS runs after the DOM is updated
+                    setTimeout(() => {
+                        eval(jsContent);  // Evaluate the fetched JS code
+                    }, 0);  // Short delay to ensure the DOM is updated
+                })
+                .catch(error => {
+                    console.error(`Error loading the JS for ${page}:`, error);
+                });
+        })
+        .catch(error => {
+            console.error('Error loading page:', error);
+        });
+}
+
+// Add 'active' class and load the new content and JS for each sidebar item
 sidebarItems.forEach(item => {
     item.addEventListener('click', () => {
-        removeActiveClass(); 
-        item.classList.add('active');  
+        const page = item.getAttribute('data-page');
+        removeActiveClass();
+        item.classList.add('active');
+        loadContent(page);  // Load new content and its associated JS
     });
 });
 
-
-document.addEventListener('DOMContentLoaded', () => {
-    const sidebarItems = document.querySelectorAll('.sidebar img');
-    const mainContent = document.querySelector('.main-content');
-
-    sidebarItems.forEach(item => {
-        item.addEventListener('click', () => {
-            // Remove 'active' class from all sidebar items
-            sidebarItems.forEach(i => i.classList.remove('active'));
-
-            // Add 'active' class to the clicked item
-            item.classList.add('active');
-
-            // Load the corresponding HTML page into the main content
-            const page = item.getAttribute('data-page');
-            loadPage(page);
-        });
-    });
-
-    function loadPage(page) {
-        fetch(`./pages/${page}/${page}.html`)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.text();
-            })
-            .then(html => {
-                mainContent.innerHTML = html;
-    
-                // Manually add the external JavaScript after loading the HTML
-                const script = document.createElement('script');
-                script.src = `/Admin/dashboard/pages/${page}/${page}.js`; // Adjust the path based on your project structure
-                script.type = 'text/javascript';
-                document.body.appendChild(script);  // Or append to mainContent depending on where you want it
-            })
-            .catch(error => {
-                mainContent.innerHTML = '<h1>Error loading page</h1><p>There was an error loading the page.</p>';
-                console.error('Error:', error);
-            });
-    }
-    
-
-    // Set the default page to 'home' on initial load
-    loadPage('home');
-    // Set the 'home' item as active on initial load
-    document.querySelector('.sidebar img[data-page="home"]').classList.add('active');
-});
+// Load 'home' page on initial load and set it as active
+loadContent('home');
+document.querySelector('.sidebar img[data-page="home"]').classList.add('active');

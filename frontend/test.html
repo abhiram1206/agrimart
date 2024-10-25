@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="test.css">
+  <title>Sidebar Navigation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+          
+          body {
+            font-family: Arial, sans-serif;
+          }
+          
+          .container-main {
+            display: flex;
+            height: 100vh;
+          }
+          
+          .sidebar {
+            background-color: #333;
+            color: white;
+            width: 250px;
+            padding: 20px;
+          }
+          
+          .sidebar ul {
+            list-style-type: none;
+          }
+          
+          .sidebar ul li {
+            margin: 20px 0;
+          }
+          
+          .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+          }
+          
+          .sidebar ul li a:hover {
+            text-decoration: underline;
+          }
+          
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+          
+        .page {
+            display: none;
+        }
+          
+        .page.hidden {
+            display: none;
+        }
+          
+        .page:not(.hidden) {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+  <div class="container-main">
+    <div class="sidebar">
+      <h2>Navigation</h2>
+      <ul>
+        <li><a href="#" onclick="switchPage('home')">Home</a></li>
+        <li><a href="#" onclick="switchPage('about')">About</a></li>
+        <li><a href="#" onclick="switchPage('services')">Services</a></li>
+        <li><a href="#" onclick="switchPage('contact')">Contact</a></li>
+      </ul>
+    </div>
+    <div class="content">
+      <div id="home" class="page">
+        <section class="container">
+            <div class="stats-1">
+                <div class="stats-1-card">
+                    <div class="stats-1-card-1">
+                        <div class="stats-1-card-1">
+                            <p>Today’s Sales</p>
+                            <h1>₹55,000</h1>
+                        </div>
+                        <p><span>+55% since</span>yesterday</p>
+                    </div>
+                    <div class="img">
+                        <img src="/Admin/assets/business-and-finance2.png" alt="">
+                    </div>
+                </div>
+                <div class="stats-1-card">
+                    <div class="stats-1-card-1">
+                        <div class="stats-1-card-1">
+                            <p>Today’s Sales</p>
+                            <h1>₹55,000</h1>
+                        </div>
+                        <p><span>+55% since</span>yesterday</p>
+                    </div>
+                    <div class="img">
+                        <img src="/Admin/assets/business-and-finance2.png" alt="">
+                    </div>
+                </div>
+                <div class="stats-1-card">
+                    <div class="stats-1-card-1">
+                        <div class="stats-1-card-1">
+                            <p>Today’s Sales</p>
+                            <h1>₹55,000</h1>
+                        </div>
+                        <p><span>+55% since</span>yesterday</p>
+                    </div>
+                    <div class="img">
+                        <img src="/Admin/assets/business-and-finance2.png" alt="">
+                    </div>
+                </div>
+                <div class="stats-1-card">
+                    <div class="stats-1-card-1">
+                        <div class="stats-1-card-1">
+                            <p>Today’s Sales</p>
+                            <h1>₹55,000</h1>
+                        </div>
+                        <p><span>+55% since</span>yesterday</p>
+                    </div>
+                    <div class="img">
+                        <img src="/Admin/assets/business-and-finance2.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="stats-2">
+                <div class="chart">
+                    <div class="chart-text">
+                        <h1>Sale Value</h1>
+                        <p><span>-2%</span> loss in Past year</p>
+                    </div>
+                    <img src="/Admin/assets/Chart.png" alt="">
+                </div>
+                <div class="chart-1">
+                    <div class="chart-text-1">
+                        <h1>Sale Value</h1>
+                        <p><span>-2%</span> loss in Past year</p>
+                    </div>
+                    <img src="/Admin/assets/BarLineChart.png" alt="">
+                </div>
+            </div>
+            <div class="stats-3">
+                <div class="categories">
+                    <h2>Categories</h2>
+                    <div class="cate-card">
+                        <img src="/Admin/assets/vegetable1.png" alt="">
+                        <div class="cate-card-text">
+                            <h2>Vegetables</h2>
+                            <p>120+ Products, 65+ Farmers Suppliers, 150kg+ sold per day</p>
+                        </div>
+                    </div>
+                    <div class="cate-card">
+                        <img src="/Admin/assets/vegetable1.png" alt="">
+                        <div class="cate-card-text">
+                            <h2>Fruits</h2>
+                            <p>120+ Products, 65+ Farmers Suppliers, 150kg+ sold per day</p>
+                        </div>
+                    </div>
+                    <div class="cate-card">
+                        <img src="/Admin/assets/vegetable1.png" alt="">
+                        <div class="cate-card-text">
+                            <h2>Rice</h2>
+                            <p>120+ Products, 65+ Farmers Suppliers, 150kg+ sold per day</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="orders">
+                    <div class="orders-c">
+                        <h2>Latest Orders</h2>
+                    </div>
+                    <table id="orderTableHome">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Delivery Status</th>
+                                <th>Ordered Product</th>
+                                <th>Quantity</th>
+                                <th>Payment Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="OrderDataTableHome"></tbody>
+                    </table>
+                </div>            
+            </div>
+        </section>
+      </div>
+      <div id="about" class="page hidden">About us content goes here.</div>
+      <div id="services" class="page hidden">Our services are listed here.</div>
+      <div id="contact" class="page hidden">Contact us for more information.</div>
+    </div>
+  </div>
+  <script>
+    function switchPage(pageId) {
+        // Hide all pages
+        const pages = document.querySelectorAll('.page');
+        pages.forEach(page => {
+          page.classList.add('hidden');
+        });
+        
+        // Show the selected page
+        const selectedPage = document.getElementById(pageId);
+        selectedPage.classList.remove('hidden');
+      }
+      
+      // By default, show the home page on load
+      window.onload = function() {
+        switchPage('home');
+      };
+      
+  </script>
+</body>
+</html>

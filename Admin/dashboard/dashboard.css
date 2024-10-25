@@ -14,7 +14,7 @@ body {
     color: #fff;
     position: fixed;
     top: 0;
-    width: 98%;
+    width: 100%;
     z-index: 1000;
     border-bottom: 1px solid #D9D9D9;
 }
@@ -24,6 +24,7 @@ body {
         padding: 20px;
     }
 }
+
 @media (max-width: 482px) {
     .navbar {
         padding: 27px;
@@ -112,7 +113,7 @@ body {
     position: fixed;
     top: 80px;
     left: 0;
-    height: calc(100% - 80px);
+    height: calc(100vh - 80px); /* Sidebar takes full height except navbar */
     width: 70px;
     background-color: #0f0f0f;
 }
@@ -138,32 +139,38 @@ body {
     background-color: #6f9440;
 }
 
+/* Ensure iframe takes full width and height without scroll bars */
 .main-content {
-    margin-left: 90px;
-    padding: 0 20px;
-    overflow-y: auto;
-    height: calc(100vh - 80px); 
+    width: 98%; /* Sidebar is 70px wide */
+    margin-left: 120px;
+    padding: 0;
+    overflow-x: hidden;
+    height: calc(100vh - 80px); /* Adjust height based on navbar */
 }
+
 
 ::-webkit-scrollbar {
     width: 5px;
 }
+
 ::-webkit-scrollbar-thumb {
     background-color: #2b2b2b;
     border-radius: 20px;
 }
 
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-    .sidebar{
+    .sidebar {
         width: 50px;
     }
+
     .sidebar img {
-        width: 24px; 
-        padding: 15px; 
+        width: 24px;
+        padding: 15px;
     }
 
     .main-content {
-        margin-left: 60px;
+        margin-left: 50px;
     }
 
     .logo {
@@ -186,16 +193,17 @@ body {
 }
 
 @media (max-width: 480px) {
-    .sidebar{
+    .sidebar {
         width: 35px;
     }
+
     .sidebar img {
-        width: 20px; 
-        padding: 10px; 
+        width: 20px;
+        padding: 10px;
     }
 
     .main-content {
-        margin-left: 45px; 
+        margin-left: 35px;
     }
 
     .logo {
@@ -206,7 +214,7 @@ body {
         display: none;
     }
 
-    .user-details{
+    .user-details {
         display: none;
     }
 

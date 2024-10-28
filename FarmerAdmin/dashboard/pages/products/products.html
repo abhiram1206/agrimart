@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/FarmerAdmin/dashboard/pages/products/products.css">
+    <link rel="stylesheet" href="/FarmerAdmin/dashboard/pages/products/popup.css">
+    <title>Product Dashboard</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-top">
+            <div class="search">
+                <img src="/Admin/assets/searchicon.png" alt="">
+                <input type="text" id="search" placeholder="Search">
+            </div>
+            <div class="filter" id="filterButton">
+                <img src="/Admin/assets/Iconfiltericon.png" alt="">
+            </div>
+        </div>
+
+        <div class="filter-section" id="filterSection" style="display: none;">
+            <p>Filter Options:</p>
+            <div class="product-filter filter">
+                <p>Product</p>
+                <div class="checkbox">
+                </div>
+            </div>
+            <div class="joined">
+                <p>Joined At</p>
+                <input type="datetime-local" class="sortBy">
+            </div>
+            <div class="btn">
+                <button id="applyFilter">Apply</button>
+            </div>
+        </div>
+
+        <div class="main-table">
+            <table id="productTable">
+                <thead>
+                    <tr>
+                        <th>Product Details</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Offer Price</th>
+                        <th>Stock</th>
+                        <th>Created At</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="ProductDataTable">
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="7">
+                            <button id="addProductBtn" class="add-product-btn">+ Add Product</button>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+            <div id="pagination"></div>
+        </div>
+
+        <div class="pagination">
+            <button id="prevBtn" disabled>‹</button>
+            <ul id="pageNumbers"></ul>
+            <button id="nextBtn">›</button>
+        </div>
+    </div>
+
+    <!-- Modal Popup for Adding Product -->
+    <div id="addProductModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Product</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="inputs">
+                    <label for="productName">Product Name:</label>
+                    <input type="text" id="productName" placeholder="Enter product name">
+                </div>
+                <div class="inputs">
+                    <label for="productImages">Product Images:</label>
+                    <input type="file" id="productImages" name="productImages" accept="image/*">
+                </div>
+                <div class="inputs">
+                    <label for="category">Category:</label>
+                    <select id="category">
+                        <option value="">Select Category</option>
+                        <option value="Fruits">Fruits</option>
+                        <option value="Vegetables">Vegetables</option>
+                        <option value="Grains">Grains</option>
+                        <option value="Dairy">Dairy</option>
+                        <option value="Spices">Spices</option>
+                    </select>
+                </div>     
+                <div class="inputs">
+                    <label for="productName">Product Description:</label>
+                    <input type="text" id="productName" placeholder="Enter product Description">
+                </div>           
+                <div class="inputs">
+                    <label for="price">Price:</label>
+                    <input type="number" id="price" placeholder="Enter product price">
+                </div>
+                <div class="inputs">
+                    <label for="offerPrice">Offer Price:</label>
+                    <input type="number" id="offerPrice" placeholder="Enter offer price (optional)">
+                </div>
+                                
+            </div>
+            <div class="modal-footer">
+                <button id="saveProduct">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./products.js"></script>
+</body>
+
+</html>

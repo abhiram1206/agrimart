@@ -3,9 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/Admin/dashboard/pages/home/home.css">     
+    <title>Agrimart - Admin Panel</title>
 </head>
 <body>
-    welcome to home
+        <section class="container">
+            <div class="stats-1">
+                <div class="stats-1-card">
+                    <div class="stats-1-card-1">
+                        <div class="stats-1-card-1">
+                            <p>Today’s Sales</p>
+                            <h1>₹55,000</h1>
+                        </div>
+                        <p><span>+55% since</span>yesterday</p>
+                    </div>
+                    <div class="img">
+                        <img src="/Admin/assets/business-and-finance2.png" alt="">
+                    </div>
+                </div>
+                <div class="stats-1-card">
+                    <div class="stats-1-card-1">
+                        <div class="stats-1-card-1">
+                            <p>Today’s Sales</p>
+                            <h1>₹55,000</h1>
+                        </div>
+                        <p><span>+55% since</span>yesterday</p>
+                    </div>
+                    <div class="img">
+                        <img src="/Admin/assets/business-and-finance2.png" alt="">
+                    </div>
+                </div>
+                <div class="stats-1-card">
+                    <div class="stats-1-card-1">
+                        <div class="stats-1-card-1">
+                            <p>Today’s Sales</p>
+                            <h1>₹55,000</h1>
+                        </div>
+                        <p><span>+55% since</span>yesterday</p>
+                    </div>
+                    <div class="img">
+                        <img src="/Admin/assets/business-and-finance2.png" alt="">
+                    </div>
+                </div>
+                <div class="stats-1-card">
+                    <div class="stats-1-card-1">
+                        <div class="stats-1-card-1">
+                            <p>Today’s Sales</p>
+                            <h1>₹55,000</h1>
+                        </div>
+                        <p><span>+55% since</span>yesterday</p>
+                    </div>
+                    <div class="img">
+                        <img src="/Admin/assets/business-and-finance2.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="stats-2">
+                <div class="chart">
+                    <div class="chart-text">
+                        <h1>Sale Value</h1>
+                        <p><span>-2%</span> loss in Past year</p>
+                    </div>
+                    <img src="/Admin/assets/Chart.png" alt="">
+                </div>
+                <div class="chart-1">
+                    <div class="chart-text-1">
+                        <h1>Sale Value</h1>
+                        <p><span>-2%</span> loss in Past year</p>
+                    </div>
+                    <img src="/Admin/assets/BarLineChart.png" alt="">
+                </div>
+            </div>
+            <div class="stats-3">
+                <div class="categories">
+                    <h2>Categories</h2>
+                    <div class="cate-card">
+                        <img src="/Admin/assets/vegetable1.png" alt="">
+                        <div class="cate-card-text">
+                            <h2>Vegetables</h2>
+                            <p>120+ Products, 65+ Farmers Suppliers, 150kg+ sold per day</p>
+                        </div>
+                    </div>
+                    <div class="cate-card">
+                        <img src="/Admin/assets/vegetable1.png" alt="">
+                        <div class="cate-card-text">
+                            <h2>Fruits</h2>
+                            <p>120+ Products, 65+ Farmers Suppliers, 150kg+ sold per day</p>
+                        </div>
+                    </div>
+                    <div class="cate-card">
+                        <img src="/Admin/assets/vegetable1.png" alt="">
+                        <div class="cate-card-text">
+                            <h2>Rice</h2>
+                            <p>120+ Products, 65+ Farmers Suppliers, 150kg+ sold per day</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="orders">
+                    <div class="orders-c">
+                        <h2>Latest Orders</h2>
+                    </div>
+                    <table id="orderTableHome">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Delivery Status</th>
+                                <th>Ordered Product</th>
+                                <th>Quantity</th>
+                                <th>Payment Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="OrderDataTableHome"></tbody>
+                    </table>
+                </div>            
+            </div>
+        </section>
+    <script src="/Admin/dashboard/pages/home/home.js"></script>
 </body>
 </html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/FarmerAdmin/dashboard/pages/farmer/farmer.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="stats-1">
+            <div class="stats-1-card">
+                <div class="stats-1-card-1">
+                    <div class="stats-1-card-1">
+                        <p>Today’s Sales</p>
+                        <h1>₹55,000</h1>
+                    </div>
+                    <p><span>+55% since </span>yesterday</p>
+                </div>
+                <div class="img">
+                    <img width="50" src="/Admin/assets/business-and-finance2.png" alt="">
+                </div>
+            </div>
+            <div class="stats-1-card">
+                <div class="stats-1-card-1">
+                    <div class="stats-1-card-1">
+                        <p>Today’s Sales</p>
+                        <h1>₹55,000</h1>
+                    </div>
+                    <p><span>+55% since </span>yesterday</p>
+                </div>
+                <div class="img">
+                    <img width="50" src="/Admin/assets/business-and-finance2.png" alt="">
+                </div>
+            </div>
+            <div class="stats-1-card">
+                <div class="stats-1-card-1">
+                    <div class="stats-1-card-1">
+                        <p>Today’s Sales</p>
+                        <h1>₹55,000</h1>
+                    </div>
+                    <p><span>+55% since </span>yesterday</p>
+                </div>
+                <div class="img">
+                    <img width="50" src="/Admin/assets/business-and-finance2.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="main-table">
+            <table id="farmerTable" >
+                <thead >
+                    <tr>
+                        <th>Payment ID</th>
+                        <th>Payment Amount</th>
+                        <th>Payment Method</th>
+                        <th>Customer Name</th>
+                        <th>Seller Name</th>
+                        <th>Payment Status</th>
+                        <th>Payment Date</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="farmerTableBody">
+                    <tr>
+                        <td>Payment 1001</td>
+                        <td>₹550</td>
+                        <td>Upi</td>
+                        <td>Shawn</td>
+                        <td>shawn</td>
+                        <td class="Recieved">Recieved</td>
+                        <td><p class="date-joined">50 min ag0</p></td>
+                        <td><img src="/Admin/assets/edit-text.png" style="background-color: #fff;border-radius: 50%;width:40px;" alt=""></td>
+                    </tr>
+                    <tr>
+                        <td>Payment 1001</td>
+                        <td>₹550</td>
+                        <td>Upi</td>
+                        <td>Shawn</td>
+                        <td>shawn</td>
+                        <td class="Recieved">Recieved</td>
+                        <td><p class="date-joined">50 min ag0</p></td>
+                        <td><img src="/Admin/assets/edit-text.png" style="background-color: #fff;border-radius: 50%;width:40px;" alt=""></td>
+                    </tr>
+                    <tr>
+                        <td>Payment 1001</td>
+                        <td>₹550</td>
+                        <td>Upi</td>
+                        <td>Shawn</td>
+                        <td>shawn</td>
+                        <td class="Recieved">Recieved</td>
+                        <td><p class="date-joined">50 min ag0</p></td>
+                        <td><img src="/Admin/assets/edit-text.png" style="background-color: #fff;border-radius: 50%;width:40px;" alt=""></td>
+                    </tr>
+                    <tr>
+                        <td>Payment 1001</td>
+                        <td>₹550</td>
+                        <td>Upi</td>
+                        <td>Shawn</td>
+                        <td>shawn</td>
+                        <td class="Recieved">Recieved</td>
+                        <td><p class="date-joined">50 min ag0</p></td>
+                        <td><img src="/Admin/assets/edit-text.png" style="background-color: #fff;border-radius: 50%;width:40px;" alt=""></td>
+                    </tr>
+                    <tr>
+                        <td>Payment 1001</td>
+                        <td>₹550</td>
+                        <td>Upi</td>
+                        <td>Shawn</td>
+                        <td>shawn</td>
+                        <td class="Recieved">Recieved</td>
+                        <td><p class="date-joined">50 min ag0</p></td>
+                        <td><img src="/Admin/assets/edit-text.png" style="background-color: #fff;border-radius: 50%;width:40px;" alt=""></td>
+                    </tr>
+                    <tr>
+                        <td>Payment 1001</td>
+                        <td>₹550</td>
+                        <td>Upi</td>
+                        <td>Shawn</td>
+                        <td>shawn</td>
+                        <td class="Recieved">Recieved</td>
+                        <td><p class="date-joined">50 min ag0</p></td>
+                        <td><img src="/Admin/assets/edit-text.png" style="background-color: #fff;border-radius: 50%;width:40px;" alt=""></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="pagination"></div> <!-- For pagination controls -->
+        </div>
+        
+
+        <div class="pagination">
+            <button id="prevBtn" disabled>‹</button>
+            <ul id="pageNumbers"></ul>
+            <button id="nextBtn">›</button>
+        </div>
+    </div>
+    <script src="/FarmerAdmin/dashboard/pages/payments/payments.js"></script>
+</body>
+</html>

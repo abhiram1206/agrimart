@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Admin/dashboard/pages/products/products.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="container-top">
+            <div class="search">
+                <img src="/Admin/assets/searchicon.png" alt="">
+                <input type="text" id="search" placeholder="Search">
+            </div>
+            <div class="filter" id="filterButton">
+                <img src="/Admin/assets/Iconfiltericon.png" alt="">
+            </div>
+        </div>
+
+        <div class="filter-section" id="filterSection" style="display: none;">
+            <p>Filter Options:</p>
+            <div class="product-filter filter">
+                <p>Prodcut</p>
+                <div class="checkbox">
+                </div>
+            </div>
+            <div class="joined">
+                <p>Joined At</p>
+                <input type="datetime-local" class="sortBy">
+            </div>
+            <div class="btn">
+                <button id="applyFilter">Apply</button>
+            </div>
+        </div>
+
+        <div class="main-table">
+            <table id="productTable" >
+                <thead >
+                    <tr>
+                        <th>Product Details</th>
+                        <th>Seller Email</th>
+                        <th>Category</th>
+                        <th>Seller Name</th>
+                        <th>Price</th>
+                        <th>Joined At</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="ProductDataTable"></tbody>
+            </table>
+            <div id="pagination"></div>
+        </div>
+        
+
+        <div class="pagination">
+            <button id="prevBtn" disabled>‹</button>
+            <ul id="pageNumbers"></ul>
+            <button id="nextBtn">›</button>
+        </div>
+    </div>
+    <script src="./products.js"></script>
+</body>
+</html>

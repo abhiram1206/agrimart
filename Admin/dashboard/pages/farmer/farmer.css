@@ -1,5 +1,6 @@
 .container {
     display: flex;
+    width: 97%;
     flex-direction: column;
 }
 
@@ -47,6 +48,7 @@
 
 table {
     width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 51, 0.2), 0 6px 20px 0 rgba(4, 1, 52, 0.19);
     border-collapse: collapse;
     margin-bottom: 20px;
     table-layout: auto; 
@@ -87,6 +89,14 @@ td button.edit-btn:hover {
     margin: 0;
 }
 
+.date-joined{
+    color: #68952D;
+    background-color: #F1FBE4;
+    padding: 5px;
+    width: fit-content;
+    border-radius: 6px;
+}
+
 /* Pagination design starts here */
 .pagination {
     display: flex;
@@ -111,9 +121,46 @@ td button.edit-btn:hover {
 }
 
 .pagination ul{
-    padding: 0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #373737;
 }
 
+/* filter section design starts here */
+.filter-section {
+    background-color: #373737;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.filter-section input{
+    background-color: #2b2b2b;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 5px;
+    outline: 0;
+    border: 0;
+    border-radius: 5px;
+}
+
+.btn{
+    width: 100%;
+    display: flex;
+    margin: 25px 0;
+}
+.btn button{
+    width: 100%;
+    padding: 15px;
+    outline: 0;
+    border: 0;
+    background-color: #68952D;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 10px;
+}
 
 @media (max-width: 1232px) {
     th, td {

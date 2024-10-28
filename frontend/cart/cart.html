@@ -12,18 +12,18 @@
         <div class="nav-right">
             <img src="../assets/logo-w.png" alt="">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="/">Marketplace</a></li>
-                <li><a href="/">Contact us</a></li>
-                <li><a href="#">About us</a></li>
+                <li><a href="../main.html">Home</a></li>
+                <li><a href="../marketplace/marketplace.html">Marketplace</a></li>
+                <li><a href="../contactus/contactus.html">Contact us</a></li>
+                <li><a href="../aboutus/aboutus.html">About us</a></li>
             </ul>
         </div>
         <div class="nav-left">
-            <!-- <ul class="unlogged-user">
+            <ul class="unlogged-user">
                  <li><a href="./auth/login.html" class="auth-btn" id="signup-btn"><img src="../assets/user-green.png" width="12" alt="">Sign Up</a></li>
                 <li><a href="./auth/login.html" class="auth-btn" id="signin-btn"><img src="../assets/user-green.png" width="12" alt="">Sign In</a></li> 
-                <li><a href="./BecomeSeller/BecomeSeller.html" class="hidden" id="become-seller-btn">Become a Seller</a></li>
-                <li><a href="/cart.html" class="hidden" id="cart-btn">Cart</a></li>
+                <li><a href="../BecomeSeller/BecomeSeller.html" class="hidden" id="become-seller-btn">Become a Seller</a></li>
+                <li><a href="../cart/cart.html" class="hidden" id="cart-btn">Cart</a></li>
                 <li class="hidden" id="profile-btn">
                     <img src="../assets/profile_icons.png" onclick="openDropdown()" style="margin-top: 5px;" width="30" alt="">
                     <div class="dropdown" id="dropdown">
@@ -33,10 +33,10 @@
                         <a href="#" class="dropdown-btn" id="sign-out" onclick="SignOut()">Sign out</a>
                     </div>
                 </li>
-            </ul>  -->
-            <a href="#" style="text-decoration: none; color:white">Become a Seller</a>
-            <a href="#" style="text-decoration: none; color:white">Cart</a>
-            <a href="#"><img src="../assets/profile-user 1.png" alt="profile"></a>
+            </ul> 
+            <!-- <a href="../BecomeSeller/BecomeSeller.html" style="text-decoration: none; color:white">Become a Seller</a>
+            <a href="../cart/cart.html" style="text-decoration: none; color:white">Cart</a>
+            <a href="#"><img src="../assets/profile-user 1.png" alt="profile"></a> -->
         </div>
         <div class="hamburger-menu">
             <div class="bar"></div>
@@ -109,6 +109,9 @@
             </div>
         </div>
         <div class="checkout">
-            <span><button class="checkout-btn">Checkout</button></span>
+            <a href="../checkout/checkout.html"><button class="checkout-btn">Checkout</button></a>
         </div>
     </div>
+    <script src="../cart/cart.js"></script>
+</body>
+</html>

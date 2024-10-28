@@ -1,78 +1,70 @@
-// Example data (you can replace it with your actual data from a database or API)
-const farmerData = [
-    { name: "John Doe", email: "JohnDoe@gmail.com", orders: 100, earned: "₹100", joined: "21st Aug 2024, 07:00 PM", products: 25 },
-    { name: "Jane Smith", email: "JaneSmith@gmail.com", orders: 90, earned: "₹120", joined: "18th Aug 2024, 10:00 AM", products: 30 },
-    { name: "Jane Smith", email: "JaneSmith@gmail.com", orders: 90, earned: "₹120", joined: "18th Aug 2024, 10:00 AM", products: 30 },
-    { name: "Jane Smith", email: "JaneSmith@gmail.com", orders: 90, earned: "₹120", joined: "18th Aug 2024, 10:00 AM", products: 30 },
-    { name: "Jane Smith", email: "JaneSmith@gmail.com", orders: 90, earned: "₹120", joined: "18th Aug 2024, 10:00 AM", products: 30 },
-    { name: "Jane Smith", email: "JaneSmith@gmail.com", orders: 90, earned: "₹120", joined: "18th Aug 2024, 10:00 AM", products: 30 },
-    { name: "Jane Smith", email: "JaneSmith@gmail.com", orders: 90, earned: "₹120", joined: "18th Aug 2024, 10:00 AM", products: 30 },
-    { name: "Jane Smith", email: "JaneSmith@gmail.com", orders: 90, earned: "₹120", joined: "18th Aug 2024, 10:00 AM", products: 30 },
-    { name: "Jane Smith", email: "JaneSmith@gmail.com", orders: 90, earned: "₹120", joined: "18th Aug 2024, 10:00 AM", products: 30 },
-    { name: "Jane Smith", email: "JaneSmith@gmail.com", orders: 90, earned: "₹120", joined: "18th Aug 2024, 10:00 AM", products: 30 },
-    { name: "Jane Smith", email: "JaneSmith@gmail.com", orders: 90, earned: "₹120", joined: "18th Aug 2024, 10:00 AM", products: 30 },
-    { name: "Jane Smith", email: "JaneSmith@gmail.com", orders: 90, earned: "₹120", joined: "18th Aug 2024, 10:00 AM", products: 30 },
-    { name: "Jane Smith", email: "JaneSmith@gmail.com", orders: 90, earned: "₹120", joined: "18th Aug 2024, 10:00 AM", products: 30 },
-    { name: "Jane Smith", email: "JaneSmith@gmail.com", orders: 90, earned: "₹120", joined: "18th Aug 2024, 10:00 AM", products: 30 },
-    { name: "Jane Smith", email: "JaneSmith@gmail.com", orders: 90, earned: "₹120", joined: "18th Aug 2024, 10:00 AM", products: 30 },
-    { name: "Jane Smith", email: "JaneSmith@gmail.com", orders: 90, earned: "₹120", joined: "18th Aug 2024, 10:00 AM", products: 30 },
-    { name: "Jane Smith", email: "JaneSmith@gmail.com", orders: 90, earned: "₹120", joined: "18th Aug 2024, 10:00 AM", products: 30 },
-    { name: "Jane Smith", email: "JaneSmith@gmail.com", orders: 90, earned: "₹120", joined: "18th Aug 2024, 10:00 AM", products: 30 },
-    { name: "Jane Smith", email: "JaneSmith@gmail.com", orders: 90, earned: "₹120", joined: "18th Aug 2024, 10:00 AM", products: 30 },
-    { name: "Jane Smith", email: "JaneSmith@gmail.com", orders: 90, earned: "₹120", joined: "18th Aug 2024, 10:00 AM", products: 30 },
-    { name: "Jane Smith", email: "JaneSmith@gmail.com", orders: 90, earned: "₹120", joined: "18th Aug 2024, 10:00 AM", products: 30 },
-    // Add more data as needed...
-    // You should have at least more than 12 entries to test the pagination properly
-];
+let Data = []; // Initialized to an empty array
 
-// Configuration for pagination
+// Fetch data from the backend
+function fetchData() {
+    fetch("http://localhost:3000/seller/sellerList")
+        .then(response => response.json())
+        .then(data => {
+            Data = data.data || []; // Data fetched from backend
+            totalPages = Math.ceil(Data.length / rowsPerPage); // Update totalPages based on fetched data
+            loadTablePage(currentPage); // Load the first page with the fetched data
+        })
+        .catch(error => console.error('Error fetching Farmer data:', error));
+}
+
+fetchData(); // Call the fetchData function to get the data when the page loads
+
 const rowsPerPage = 12;
 let currentPage = 1;
-const totalPages = Math.ceil(farmerData.length / rowsPerPage);
+let totalPages = 1; // Default totalPages value; will be updated after data is fetched
 
-// DOM Elements
 const farmerTableBody = document.getElementById('farmerTableBody');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 const pageNumbers = document.getElementById('pageNumbers');
 
-// Function to load data for the current page
-function loadTablePage(page) {
-    // Clear the existing table data
-    farmerTableBody.innerHTML = "";
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    const day = date.getUTCDate();
+    const month = date.toLocaleString('en-US', { month: 'short' });
+    const year = date.getUTCFullYear();
+    let hours = date.getUTCHours();
+    const minutes = date.getUTCMinutes().toString().padStart(2, '0');
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12;
 
-    // Calculate the start and end indices for the data to display
+    return `${day} ${month} ${year}, ${hours}:${minutes} ${ampm}`;
+}
+
+function loadTablePage(page) {
+    farmerTableBody.innerHTML = ""; 
+
     const start = (page - 1) * rowsPerPage;
     const end = page * rowsPerPage;
-    
-    // Slice the data for the current page
-    const currentData = farmerData.slice(start, end);
-    
-    // Populate the table with the current data
+    const currentData = Data.slice(start, end);
     currentData.forEach(farmer => {
+        console.log(farmer)
         const row = `
             <tr>
-                <td>${farmer.name}</td>
-                <td>${farmer.email}</td>
-                <td>${farmer.orders}</td>
-                <td>${farmer.earned}</td>
-                <td>${farmer.joined}</td>
-                <td>${farmer.products}</td>
-                <td><img src="/Admin/assets/edit-text.png" style="background-color: #fff;border-radius: 50%;" alt=""></td>
+                <td>${farmer.UserDetails.firstName + " " + farmer.UserDetails.lastName}</td>
+                <td>${farmer.UserDetails.email}</td>
+                <td>${farmer.orders || 0}</td>
+                <td>${farmer.earned || 0}</td>
+                <td><p class="date-joined">${formatDate(farmer.createdAt)}</p></td>
+                <td>${farmer.products || 0}</td>
+                <td><img src="/Admin/assets/edit-text.png" style="background-color: #fff;border-radius: 50%;width:40px;" alt=""></td>
             </tr>
         `;
-        farmerTableBody.insertAdjacentHTML('beforeend', row);
+        farmerTableBody.insertAdjacentHTML('beforeend', row); // Insert row into table
     });
 
-    // Update page numbers
     pageNumbers.innerHTML = `${page} `;
-
-    // Disable/Enable buttons based on the current page
     prevBtn.disabled = page === 1;
     nextBtn.disabled = page === totalPages;
 }
 
-// Event listeners for the Previous and Next buttons
+// Previous button click event
 prevBtn.addEventListener('click', () => {
     if (currentPage > 1) {
         currentPage--;
@@ -80,6 +72,7 @@ prevBtn.addEventListener('click', () => {
     }
 });
 
+// Next button click event
 nextBtn.addEventListener('click', () => {
     if (currentPage < totalPages) {
         currentPage++;
@@ -87,5 +80,13 @@ nextBtn.addEventListener('click', () => {
     }
 });
 
-// Initially load the first page
-loadTablePage(currentPage);
+// Toggle filter button functionality
+document.getElementById('filterButton').addEventListener('click', function() {
+    const filterSection = document.getElementById('filterSection');
+    
+    if (filterSection.style.display === 'none' || filterSection.style.display === '') {
+        filterSection.style.display = 'block'; 
+    } else {
+        filterSection.style.display = 'none'; 
+    }
+});

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Admin/dashboard/pages/questions/questions.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="container-top">
+            <div class="search">
+                <img src="/Admin/assets/searchicon.png" alt="">
+                <input type="text" id="search" placeholder="Search">
+            </div>
+            <div class="filter" id="filterButton">
+                <img src="/Admin/assets/Iconfiltericon.png" alt="">
+            </div>
+        </div>
+
+        <div class="filter-section" id="filterSection" style="display: none;">
+            <p>Filter Options:</p>
+            <div class="product-filter filter">
+                <p>Prodcut</p>
+                <div class="checkbox">
+                </div>
+            </div>
+            <div class="joined">
+                <p>Joined At</p>
+                <input type="datetime-local" class="sortBy">
+            </div>
+            <div class="btn">
+                <button id="applyFilter">Apply</button>
+            </div>
+        </div>
+
+        <div class="main-table">
+            <table id="QueryData" >
+                <thead >
+                    <tr>
+                        <th>Seller Name</th>
+                        <th>Seller Email</th>
+                        <th>Seller Query</th>
+                        <th>Query Date</th>
+                        <th>Reply</th>
+                        
+                    </tr>
+                </thead>
+                <tbody id="QueryDataTable">
+                    <tr>
+                        <td>Abhiram Putta</td>
+                        <td>abhiramputta12@gmail.com</td>
+                        <td>i want to contact a farmer for bulk ordering</td>
+                        <td><p>50 mins ago</p></td>
+                        <td><button class="reply">Reply<img src="/Admin/assets/share 1.png" alt=""></button></td>
+                    </tr>
+                    <tr>
+                        <td>Abhiram Putta</td>
+                        <td>abhiramputta12@gmail.com</td>
+                        <td>i want to contact a farmer for bulk ordering</td>
+                        <td><p>50 mins ago</p></td>
+                        <td><button class="reply">Reply<img src="/Admin/assets/share 1.png" alt=""></button></td>
+                    </tr>
+                    <tr>
+                        <td>Abhiram Putta</td>
+                        <td>abhiramputta12@gmail.com</td>
+                        <td>i want to contact a farmer for bulk ordering</td>
+                        <td><p>50 mins ago</p></td>
+                        <td><button class="reply">Reply<img src="/Admin/assets/share 1.png" alt=""></button></td>
+                    </tr>
+                    <tr>
+                        <td>Abhiram Putta</td>
+                        <td>abhiramputta12@gmail.com</td>
+                        <td>i want to contact a farmer for bulk ordering</td>
+                        <td><p>50 mins ago</p></td>
+                        <td><button class="reply">Reply<img src="/Admin/assets/share 1.png" alt=""></button></td>
+                    </tr>
+                    <tr>
+                        <td>Abhiram Putta</td>
+                        <td>abhiramputta12@gmail.com</td>
+                        <td>i want to contact a farmer for bulk ordering</td>
+                        <td><p>50 mins ago</p></td>
+                        <td><button class="reply">Reply<img src="/Admin/assets/share 1.png" alt=""></button></td>
+                    </tr>
+                    <tr>
+                        <td>Abhiram Putta</td>
+                        <td>abhiramputta12@gmail.com</td>
+                        <td>i want to contact a farmer for bulk ordering</td>
+                        <td><p>50 mins ago</p></td>
+                        <td><button class="reply">Reply<img src="/Admin/assets/share 1.png" alt=""></button></td>
+                    </tr>
+                    <tr>
+                        <td>Abhiram Putta</td>
+                        <td>abhiramputta12@gmail.com</td>
+                        <td>i want to contact a farmer for bulk ordering</td>
+                        <td><p>50 mins ago</p></td>
+                        <td><button class="reply">Reply<img src="/Admin/assets/share 1.png" alt=""></button></td>
+                    </tr>
+                    <tr>
+                        <td>Abhiram Putta</td>
+                        <td>abhiramputta12@gmail.com</td>
+                        <td>i want to contact a farmer for bulk ordering</td>
+                        <td><p>50 mins ago</p></td>
+                        <td><button class="reply">Reply<img src="/Admin/assets/share 1.png" alt=""></button></td>
+                    </tr>
+                    <tr>
+                        <td>Abhiram Putta</td>
+                        <td>abhiramputta12@gmail.com</td>
+                        <td>i want to contact a farmer for bulk ordering</td>
+                        <td><p>50 mins ago</p></td>
+                        <td><button class="reply">Reply<img src="/Admin/assets/share 1.png" alt=""></button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="pagination"></div>
+        </div>
+        
+
+        <div class="pagination">
+            <button id="prevBtn" disabled>‹</button>
+            <ul id="pageNumbers"></ul>
+            <button id="nextBtn">›</button>
+        </div>
+    </div>
+    <script src="./questions.js"></script>
+</body>
+</html>

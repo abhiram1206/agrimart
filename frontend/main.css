@@ -506,3 +506,66 @@ nav {
     background-color: #508D4E;
     border-radius: 2px;
 }
+
+.typewriting-effect{
+    width: 246px;
+}
+
+.words{
+    font-size: 5.5rem;
+    font-weight: bold;
+    z-index: 0;
+}
+
+.text.words{
+    position: relative;
+}
+.text.words:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #508D4E; 
+    /* background-color: red; */
+    border-left: 3px solid white;
+    animation: animate 4s steps(12) infinite;
+}
+
+@keyframes animate{
+    40%, 60%{
+        left: calc(100% + 5px);
+        width: 10%;
+    }
+    100%{
+        left: 0%;
+    }
+}
+
+@media screen and (max-width: 930px) { 
+    .section1{
+    background-color: #508D4E;
+    height: 630px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    }
+    .right_sec1 img{
+        display: none;
+    }
+
+    .sec2_sol{
+        display: flex;
+        flex-direction: column;
+    }
+    .sol_buttons{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+}

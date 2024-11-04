@@ -254,7 +254,6 @@ nav {
     background-color: rgb(227, 226, 226);
     display: flex;
     margin-top: 170px;
-    height: 2300px;
 }
 
 .leftmarketsection{
@@ -408,7 +407,6 @@ nav {
     padding: 10px;
     margin: 5px 0;
     border-radius: 3px;
-    position: relative;
 }
 
 .buy_now{
@@ -422,82 +420,4 @@ nav {
     justify-content: center;
     align-items: center;
     gap: 10px;
-}
-
-
-.rightmarketsection_1,
-.rightmarketsection_2, 
-.rightmarketsection_3{
-    position: relative; /* Ensure proper stacking context */
-}
-
-.vegetable {
-    position: relative; /* Establish positioning context for child elements */
-}
-
-/* Quantity selector styling */
-.quantity {
-    position: relative;
-    cursor: pointer;
-    width: 100%;
-}
-
-/* Dropdown options styling */
-.options {
-    position: absolute;
-    left: 5%;
-    top: 83%; /* Position directly below the quantity selector */
-    width: 90%; /* Match parent width */
-    max-height: 250px;
-    overflow-y: auto;
-    background-color: white;
-    padding: 0;
-    margin-top: 5px;
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1000; /* Ensure dropdown appears above other elements */
-}
-
-.options li {
-    padding: 8px 12px;
-    color: gray;
-    font-size: 17px;
-    cursor: pointer;
-    list-style: none;
-    transition: background-color 0.2s ease;
-}
-
-.options li:hover {
-    background-color: #f2f2f2;
-}
-
-/* Ensure proper stacking for each vegetable block */
-#vegetable1, #vegetable2, #vegetable3, #vegetable4, #vegetable5, #vegetable6, #vegetable7, #vegetable8, #vegetable9{
-    position: relative;
-    z-index: 1; /* Default z-index */
-}
-
-/* Increase z-index when dropdown is active */
-#vegetable1:hover, #vegetable2:hover, #vegetable3:hover, #vegetable4:hover , #vegetable5:hover, #vegetable6:hover,#vegetable7:hover,
-#vegetable8:hover,#vegetable9:hover {
-    z-index: 2;
-}
-
-.options::-webkit-scrollbar {
-    width: 6px;
-}
-
-.options::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 3px;
-}
-
-.options::-webkit-scrollbar-thumb {
-    background: #4CAF50;  /* Green color */
-    border-radius: 3px;
-}
-
-.options::-webkit-scrollbar-thumb:hover {
-    background: #45a049;  /* Darker green on hover */
 }

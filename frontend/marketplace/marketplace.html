@@ -101,8 +101,8 @@
 
         <div class="rightmarketsection">
             <!-- Vegetable Card Template -->
-             <div class="rightmarketsection_1">
-                <div class="vegetable">
+            <div class="rightmarketsection_1">
+                <div class="vegetable" id="vegetable1">
                     <div class="veg_st">
                         <h3 class="sale">Sale</h3>
                         <div class="fav">
@@ -113,7 +113,7 @@
                     <h3 class="name_prd">Fresh Farm Grown Tomatoes</h3>
                     <h3 class="wt">1kg</h3>
                     <div class="farmer">
-                        <h5>By</h5> 
+                        <h5>By</h5>
                         <h5 class="blue">John Joe</h5>
                     </div>
                     <div class="review">
@@ -125,36 +125,38 @@
                             <h5>15 Reviews</h5>
                         </div>
                         <div class="cost">
-                            <h4>₹24.33</h4>
+                            <h4>₹ <span class="price" id="price1">24.33</span></h4>
                         </div>
                     </div>
-                    <div class="quantity">
+                    <div class="quantity" onclick="toggleOptions(event, 24.33, 'options1', 'selected_quantity1')">
                         <img src="../assets/ant-menu-submenu-arrow-down.png" alt="">
-                        <h4 style="color: rgb(110, 108, 108);"><a href="#" style="color: grey; text-decoration: none;">Quantity</a></h4>
+                        <h4 style="color: rgb(110, 108, 108);">Quantity: <span class="selected_quantity" id="selected_quantity1" style="color: grey; text-decoration: none;">1</span></h4>
                     </div>
-                    <div class="buynow">
-                        <h3 class="sale buy_now"><a href="../item details/item_details.html" style="color: white; text-decoration: none;">Buy Now</a></h3>
-                    </div>
+                    <ul class="options" id="options1" style="display: none;"></ul>
+                    <a href="../item details/item_details.html" style="text-decoration: none;">
+                        <div class="buynow" style="color: white;" onclick="itemDetails(24.33, parseInt(document.getElementById('selected_quantity1').innerText))">
+                            <h3 class="sale buy_now">Buy Now</h3>
+                        </div>
+                    </a>
                     <div class="addtocart">
                         <img src="../assets/Shopping cart.png" alt="add to cart">
                         <h4><a href="../cart/cart.html" style="color: grey; text-decoration: none;">Add to Cart</a></h4>
                     </div>
                 </div>
             
-                <!-- Replicate for each vegetable -->
-                <div class="vegetable">
+                <div class="vegetable" id="vegetable2">
                     <div class="veg_st">
                         <h3 class="sale">Sale</h3>
                         <div class="fav">
                             <img src="../assets/carbon_favorite.png" alt="">
                         </div>
                     </div>
-                    <img src="../assets/images 1.png" alt="carrots">
-                    <h3 class="name_prd">Fresh Organic Carrots</h3>
+                    <img src="../assets/images 1.png" alt="tomatoes">
+                    <h3 class="name_prd">Fresh Farm Grown Tomatoes</h3>
                     <h3 class="wt">1kg</h3>
                     <div class="farmer">
-                        <h5>By</h5> 
-                        <h5 class="blue">Jane Doe</h5>
+                        <h5>By</h5>
+                        <h5 class="blue">John Joe</h5>
                     </div>
                     <div class="review">
                         <img src="../assets/Group 187.png" alt="review">
@@ -162,26 +164,29 @@
                     <div class="chat">
                         <div class="no_rev">
                             <img src="../assets/chat 1.png" alt="number of reviews">
-                            <h5>10 Reviews</h5>
+                            <h5>15 Reviews</h5>
                         </div>
                         <div class="cost">
-                            <h4>₹30.00</h4>
+                            <h4>₹ <span class="price" id="price2">29.33</span></h4>
                         </div>
                     </div>
-                    <div class="quantity">
+                    <div class="quantity" onclick="toggleOptions(event, 29.33, 'options2', 'selected_quantity2')">
                         <img src="../assets/ant-menu-submenu-arrow-down.png" alt="">
-                        <h4 style="color: rgb(110, 108, 108);"><a href="#" style="color: grey; text-decoration: none;">Quantity</a></h4>
+                        <h4 style="color: rgb(110, 108, 108);">Quantity: <span class="selected_quantity" id="selected_quantity2" style="color: grey; text-decoration: none;">1</span></h4>
                     </div>
-                    <div class="buynow">
-                        <h3 class="sale buy_now"><a href="../item details/item_details.html" style="color: white; text-decoration: none;">Buy Now</a></h3>
-                    </div>
+                    <ul class="options" id="options2" style="display: none;"></ul>
+                    <a href="../item details/item_details.html" style="text-decoration: none;">
+                        <div class="buynow" style="color: white;" onclick="itemDetails(29.33, parseInt(document.getElementById('selected_quantity2').innerText))">
+                            <h3 class="sale buy_now">Buy Now</h3>
+                        </div>
+                    </a>
                     <div class="addtocart">
                         <img src="../assets/Shopping cart.png" alt="add to cart">
-                        <h4><a href="#" style="color: grey; text-decoration: none;">Add to Cart</a></h4>
+                        <h4><a href="../cart/cart.html" style="color: grey; text-decoration: none;">Add to Cart</a></h4>
                     </div>
                 </div>
             
-                <div class="vegetable">
+                <div class="vegetable" id="vegetable3">
                     <div class="veg_st">
                         <h3 class="sale">Sale</h3>
                         <div class="fav">
@@ -189,10 +194,10 @@
                         </div>
                     </div>
                     <img src="../assets/images 1.png" alt="bell peppers">
-                    <h3 class="name_prd">Fresh Bell Peppers</h3>
+                    <h3 class="name_prd">Fresh Farm Grown Tomatoes</h3>
                     <h3 class="wt">1kg</h3>
                     <div class="farmer">
-                        <h5>By</h5> 
+                        <h5>By</h5>
                         <h5 class="blue">Mark Smith</h5>
                     </div>
                     <div class="review">
@@ -204,104 +209,29 @@
                             <h5>8 Reviews</h5>
                         </div>
                         <div class="cost">
-                            <h4>₹35.50</h4>
+                            <h4>₹ <span class="price" id="price3">35.33</span></h4>
                         </div>
                     </div>
-                    <div class="quantity">
+                    <div class="quantity" onclick="toggleOptions(event, 35.33, 'options3', 'selected_quantity3')">
                         <img src="../assets/ant-menu-submenu-arrow-down.png" alt="">
-                        <h4 style="color: rgb(110, 108, 108);"><a href="../item details/item_details.html" style="color: grey; text-decoration: none;">Quantity</a></h4>
+                        <h4 style="color: rgb(110, 108, 108);">Quantity: <span class="selected_quantity" id="selected_quantity3" style="color: grey; text-decoration: none;">1</span></h4>
                     </div>
-                    <div class="buynow">
-                        <h3 class="sale buy_now"><a href="#" style="color: white; text-decoration: none;">Buy Now</a></h3>
-                    </div>
+                    <ul class="options" id="options3" style="display: none;"></ul>
+                    <a href="../item details/item_details.html" style="text-decoration: none;">
+                        <div class="buynow" style="color: white;" onclick="itemDetails(35.33, parseInt(document.getElementById('selected_quantity3').innerText))">
+                            <h3 class="sale buy_now">Buy Now</h3>
+                        </div>
+                    </a>
                     <div class="addtocart">
                         <img src="../assets/Shopping cart.png" alt="add to cart">
                         <h4><a href="../cart/cart.html" style="color: grey; text-decoration: none;">Add to Cart</a></h4>
                     </div>
                 </div>
             </div>
+            
 
             <div class="rightmarketsection_2">
-                <div class="vegetable">
-                    <div class="veg_st">
-                        <h3 class="sale">Sale</h3>
-                        <div class="fav">
-                            <img src="../assets/carbon_favorite.png" alt="">
-                        </div>
-                    </div>
-                    <img src="../assets/images 1.png" alt="tomatoes">
-                    <h3 class="name_prd">Fresh Farm Grown Tomatoes</h3>
-                    <h3 class="wt">1kg</h3>
-                    <div class="farmer">
-                        <h5>By</h5> 
-                        <h5 class="blue">John Joe</h5>
-                    </div>
-                    <div class="review">
-                        <img src="../assets/Group 187.png" alt="review">
-                    </div>
-                    <div class="chat">
-                        <div class="no_rev">
-                            <img src="../assets/chat 1.png" alt="number of reviews">
-                            <h5>15 Reviews</h5>
-                        </div>
-                        <div class="cost">
-                            <h4>₹24.33</h4>
-                        </div>
-                    </div>
-                    <div class="quantity">
-                        <img src="../assets/ant-menu-submenu-arrow-down.png" alt="">
-                        <h4 style="color: rgb(110, 108, 108);"><a href="#" style="color: grey; text-decoration: none;">Quantity</a></h4>
-                    </div>
-                    <div class="buynow">
-                        <h3 class="sale buy_now"><a href="../item details/item_details.html" style="color: white; text-decoration: none;">Buy Now</a></h3>
-                    </div>
-                    <div class="addtocart">
-                        <img src="../assets/Shopping cart.png" alt="add to cart">
-                        <h4><a href="../cart/cart.html" style="color: grey; text-decoration: none;">Add to Cart</a></h4>
-                    </div>
-                </div>
-            
-                <!-- Replicate for each vegetable -->
-                <div class="vegetable">
-                    <div class="veg_st">
-                        <h3 class="sale">Sale</h3>
-                        <div class="fav">
-                            <img src="../assets/carbon_favorite.png" alt="">
-                        </div>
-                    </div>
-                    <img src="../assets/images 1.png" alt="carrots">
-                    <h3 class="name_prd">Fresh Organic Carrots</h3>
-                    <h3 class="wt">1kg</h3>
-                    <div class="farmer">
-                        <h5>By</h5> 
-                        <h5 class="blue">Jane Doe</h5>
-                    </div>
-                    <div class="review">
-                        <img src="../assets/Group 187.png" alt="review">
-                    </div>
-                    <div class="chat">
-                        <div class="no_rev">
-                            <img src="../assets/chat 1.png" alt="number of reviews">
-                            <h5>10 Reviews</h5>
-                        </div>
-                        <div class="cost">
-                            <h4>₹30.00</h4>
-                        </div>
-                    </div>
-                    <div class="quantity">
-                        <img src="../assets/ant-menu-submenu-arrow-down.png" alt="">
-                        <h4 style="color: rgb(110, 108, 108);"><a href="#" style="color: grey; text-decoration: none;">Quantity</a></h4>
-                    </div>
-                    <div class="buynow">
-                        <h3 class="sale buy_now buy"><a href="../item details/item_details.html" style="color: white; text-decoration: none;">Buy Now</a></h3>
-                    </div>
-                    <div class="addtocart">
-                        <img src="../assets/Shopping cart.png" alt="add to cart">
-                        <h4><a href="../cart/cart.html" style="color: grey; text-decoration: none;">Add to Cart</a></h4>
-                    </div>
-                </div>
-            
-                <div class="vegetable">
+                <div class="vegetable" id="vegetable4">
                     <div class="veg_st">
                         <h3 class="sale">Sale</h3>
                         <div class="fav">
@@ -309,10 +239,10 @@
                         </div>
                     </div>
                     <img src="../assets/images 1.png" alt="bell peppers">
-                    <h3 class="name_prd">Fresh Bell Peppers</h3>
+                    <h3 class="name_prd">Fresh Farm Grown Tomatoes</h3>
                     <h3 class="wt">1kg</h3>
                     <div class="farmer">
-                        <h5>By</h5> 
+                        <h5>By</h5>
                         <h5 class="blue">Mark Smith</h5>
                     </div>
                     <div class="review">
@@ -324,16 +254,104 @@
                             <h5>8 Reviews</h5>
                         </div>
                         <div class="cost">
-                            <h4>₹35.50</h4>
+                            <h4>₹ <span class="price" id="price4">24.33</span></h4>
                         </div>
                     </div>
-                    <div class="quantity">
+                    <div class="quantity" onclick="toggleOptions(event, 24.33, 'options4', 'selected_quantity4')">
                         <img src="../assets/ant-menu-submenu-arrow-down.png" alt="">
-                        <h4 style="color: rgb(110, 108, 108);"><a href="#" style="color: grey; text-decoration: none;">Quantity</a></h4>
+                        <h4 style="color: rgb(110, 108, 108);">Quantity: <span class="selected_quantity" id="selected_quantity4" style="color: grey; text-decoration: none;">1</span></h4>
                     </div>
-                    <div class="buynow">
-                        <h3 class="sale buy_now"><a href="../item details/item_details.html" style="color: white; text-decoration: none;">Buy Now</a></h3>
+                    <ul class="options" id="options4" style="display: none;"></ul>
+                    <a href="../item details/item_details.html" style="text-decoration: none;">
+                        <div class="buynow" style="color: white;" onclick="itemDetails(24.33, parseInt(document.getElementById('selected_quantity4').innerText))">
+                            <h3 class="sale buy_now">Buy Now</h3>
+                        </div>
+                    </a>
+                    <div class="addtocart">
+                        <img src="../assets/Shopping cart.png" alt="add to cart">
+                        <h4><a href="../cart/cart.html" style="color: grey; text-decoration: none;">Add to Cart</a></h4>
                     </div>
+                </div>
+            
+                <!-- Replicate for each vegetable -->
+                <div class="vegetable" id="vegetable5">
+                    <div class="veg_st">
+                        <h3 class="sale">Sale</h3>
+                        <div class="fav">
+                            <img src="../assets/carbon_favorite.png" alt="">
+                        </div>
+                    </div>
+                    <img src="../assets/images 1.png" alt="bell peppers">
+                    <h3 class="name_prd">Fresh Farm Grown Tomatoes</h3>
+                    <h3 class="wt">1kg</h3>
+                    <div class="farmer">
+                        <h5>By</h5>
+                        <h5 class="blue">Mark Smith</h5>
+                    </div>
+                    <div class="review">
+                        <img src="../assets/Group 187.png" alt="review">
+                    </div>
+                    <div class="chat">
+                        <div class="no_rev">
+                            <img src="../assets/chat 1.png" alt="number of reviews">
+                            <h5>15 Reviews</h5>
+                        </div>
+                        <div class="cost">
+                            <h4>₹ <span class="price" id="price5">29.99</span></h4>
+                        </div>
+                    </div>
+                    <div class="quantity" onclick="toggleOptions(event, 29.99, 'options5', 'selected_quantity5')">
+                        <img src="../assets/ant-menu-submenu-arrow-down.png" alt="">
+                        <h4 style="color: rgb(110, 108, 108);">Quantity: <span class="selected_quantity" id="selected_quantity5" style="color: grey; text-decoration: none;">1</span></h4>
+                    </div>
+                    <ul class="options" id="options5" style="display: none;"></ul>
+                    <a href="../item details/item_details.html" style="text-decoration: none;">
+                        <div class="buynow" style="color: white;" onclick="itemDetails(29.99, parseInt(document.getElementById('selected_quantity5').innerText))">
+                            <h3 class="sale buy_now">Buy Now</h3>
+                        </div>
+                    </a>
+                    <div class="addtocart">
+                        <img src="../assets/Shopping cart.png" alt="add to cart">
+                        <h4><a href="../cart/cart.html" style="color: grey; text-decoration: none;">Add to Cart</a></h4>
+                    </div>
+                </div>
+                
+                <div class="vegetable" id="vegetable6">
+                    <div class="veg_st">
+                        <h3 class="sale">Sale</h3>
+                        <div class="fav">
+                            <img src="../assets/carbon_favorite.png" alt="">
+                        </div>
+                    </div>
+                    <img src="../assets/images 1.png" alt="bell peppers">
+                    <h3 class="name_prd">Fresh Farm Grown Tomatoes</h3>
+                    <h3 class="wt">1kg</h3>
+                    <div class="farmer">
+                        <h5>By</h5>
+                        <h5 class="blue">Mark Don</h5>
+                    </div>
+                    <div class="review">
+                        <img src="../assets/Group 187.png" alt="review">
+                    </div>
+                    <div class="chat">
+                        <div class="no_rev">
+                            <img src="../assets/chat 1.png" alt="number of reviews">
+                            <h5>15 Reviews</h5>
+                        </div>
+                        <div class="cost">
+                            <h4>₹ <span class="price" id="price6">35.33</span></h4>
+                        </div>
+                    </div>
+                    <div class="quantity" onclick="toggleOptions(event, 35.33, 'options6', 'selected_quantity6')">
+                        <img src="../assets/ant-menu-submenu-arrow-down.png" alt="">
+                        <h4 style="color: rgb(110, 108, 108);">Quantity: <span class="selected_quantity" id="selected_quantity6" style="color: grey; text-decoration: none;">1</span></h4>
+                    </div>
+                    <ul class="options" id="options6" style="display: none;"></ul>
+                    <a href="../item details/item_details.html" style="text-decoration: none;">
+                        <div class="buynow" style="color: white;" onclick="itemDetails(35.33, parseInt(document.getElementById('selected_quantity6').innerText))">
+                            <h3 class="sale buy_now">Buy Now</h3>
+                        </div>
+                    </a>
                     <div class="addtocart">
                         <img src="../assets/Shopping cart.png" alt="add to cart">
                         <h4><a href="../cart/cart.html" style="color: grey; text-decoration: none;">Add to Cart</a></h4>
@@ -342,19 +360,19 @@
             </div>
 
             <div class="rightmarketsection_3">
-                <div class="vegetable">
+                <div class="vegetable" id="vegetable7">
                     <div class="veg_st">
                         <h3 class="sale">Sale</h3>
                         <div class="fav">
                             <img src="../assets/carbon_favorite.png" alt="">
                         </div>
                     </div>
-                    <img src="../assets/images 1.png" alt="tomatoes">
+                    <img src="../assets/images 1.png" alt="bell peppers">
                     <h3 class="name_prd">Fresh Farm Grown Tomatoes</h3>
                     <h3 class="wt">1kg</h3>
                     <div class="farmer">
-                        <h5>By</h5> 
-                        <h5 class="blue">John Joe</h5>
+                        <h5>By</h5>
+                        <h5 class="blue">Mark Don</h5>
                     </div>
                     <div class="review">
                         <img src="../assets/Group 187.png" alt="review">
@@ -365,16 +383,19 @@
                             <h5>15 Reviews</h5>
                         </div>
                         <div class="cost">
-                            <h4>₹24.33</h4>
+                            <h4>₹ <span class="price" id="price7">25.99</span></h4>
                         </div>
                     </div>
-                    <div class="quantity">
+                    <div class="quantity" onclick="toggleOptions(event, 25.99, 'options7', 'selected_quantity7')">
                         <img src="../assets/ant-menu-submenu-arrow-down.png" alt="">
-                        <h4 style="color: rgb(110, 108, 108);"><a href="#" style="color: grey; text-decoration: none;">Quantity</a></h4>
+                        <h4 style="color: rgb(110, 108, 108);">Quantity: <span class="selected_quantity" id="selected_quantity7" style="color: grey; text-decoration: none;">1</span></h4>
                     </div>
-                    <div class="buynow">
-                        <h3 class="sale buy_now"><a href="../item details/item_details.html" style="color: white; text-decoration: none;">Buy Now</a></h3>
-                    </div>
+                    <ul class="options" id="options7" style="display: none;"></ul>
+                    <a href="../item details/item_details.html" style="text-decoration: none;">
+                        <div class="buynow" style="color: white;" onclick="itemDetails(25.99, parseInt(document.getElementById('selected_quantity7').innerText))">
+                            <h3 class="sale buy_now">Buy Now</h3>
+                        </div>
+                    </a>
                     <div class="addtocart">
                         <img src="../assets/Shopping cart.png" alt="add to cart">
                         <h4><a href="../cart/cart.html" style="color: grey; text-decoration: none;">Add to Cart</a></h4>
@@ -382,46 +403,7 @@
                 </div>
             
                 <!-- Replicate for each vegetable -->
-                <div class="vegetable">
-                    <div class="veg_st">
-                        <h3 class="sale">Sale</h3>
-                        <div class="fav">
-                            <img src="../assets/carbon_favorite.png" alt="">
-                        </div>
-                    </div>
-                    <img src="../assets/images 1.png" alt="carrots">
-                    <h3 class="name_prd">Fresh Organic Carrots</h3>
-                    <h3 class="wt">1kg</h3>
-                    <div class="farmer">
-                        <h5>By</h5> 
-                        <h5 class="blue">Jane Doe</h5>
-                    </div>
-                    <div class="review">
-                        <img src="../assets/Group 187.png" alt="review">
-                    </div>
-                    <div class="chat">
-                        <div class="no_rev">
-                            <img src="../assets/chat 1.png" alt="number of reviews">
-                            <h5>10 Reviews</h5>
-                        </div>
-                        <div class="cost">
-                            <h4>₹30.00</h4>
-                        </div>
-                    </div>
-                    <div class="quantity">
-                        <img src="../assets/ant-menu-submenu-arrow-down.png" alt="">
-                        <h4 style="color: rgb(110, 108, 108);"><a href="#" style="color: grey; text-decoration: none;">Quantity</a></h4>
-                    </div>
-                    <div class="buynow">
-                        <h3 class="sale buy_now"><a href="../item details/item_details.html" style="color: white; text-decoration: none;">Buy Now</a></h3>
-                    </div>
-                    <div class="addtocart">
-                        <img src="../assets/Shopping cart.png" alt="add to cart">
-                        <h4><a href="../cart/cart.html" style="color: grey; text-decoration: none;">Add to Cart</a></h4>
-                    </div>
-                </div>
-            
-                <div class="vegetable">
+                <div class="vegetable" id="vegetable8">
                     <div class="veg_st">
                         <h3 class="sale">Sale</h3>
                         <div class="fav">
@@ -429,11 +411,11 @@
                         </div>
                     </div>
                     <img src="../assets/images 1.png" alt="bell peppers">
-                    <h3 class="name_prd">Fresh Bell Peppers</h3>
+                    <h3 class="name_prd">Fresh Farm Grown Tomatoes</h3>
                     <h3 class="wt">1kg</h3>
                     <div class="farmer">
-                        <h5>By</h5> 
-                        <h5 class="blue">Mark Smith</h5>
+                        <h5>By</h5>
+                        <h5 class="blue">Mark John</h5>
                     </div>
                     <div class="review">
                         <img src="../assets/Group 187.png" alt="review">
@@ -441,22 +423,67 @@
                     <div class="chat">
                         <div class="no_rev">
                             <img src="../assets/chat 1.png" alt="number of reviews">
-                            <h5>8 Reviews</h5>
+                            <h5>12 Reviews</h5>
                         </div>
                         <div class="cost">
-                            <h4>₹35.50</h4>
+                            <h4>₹ <span class="price" id="price8">29.99</span></h4>
                         </div>
                     </div>
-                    <div class="quantity">
+                    <div class="quantity" onclick="toggleOptions(event, 29.99, 'options8', 'selected_quantity8')">
                         <img src="../assets/ant-menu-submenu-arrow-down.png" alt="">
-                        <h4 style="color: rgb(110, 108, 108);"><a href="../item details/item_details.html" style="color: grey; text-decoration: none;">Quantity</a></h4>
+                        <h4 style="color: rgb(110, 108, 108);">Quantity: <span class="selected_quantity" id="selected_quantity8" style="color: grey; text-decoration: none;">1</span></h4>
                     </div>
-                    <div class="buynow">
-                        <h3 class="sale buy_now"><a href="../cart/cart.css" style="color: white; text-decoration: none;">Buy Now</a></h3>
-                    </div>
+                    <ul class="options" id="options8" style="display: none;"></ul>
+                    <a href="../item details/item_details.html" style="text-decoration: none;">
+                        <div class="buynow" style="color: white;" onclick="itemDetails(29.99, parseInt(document.getElementById('selected_quantity8').innerText))">
+                            <h3 class="sale buy_now">Buy Now</h3>
+                        </div>
+                    </a>
                     <div class="addtocart">
                         <img src="../assets/Shopping cart.png" alt="add to cart">
-                        <h4><a href="#" style="color: grey; text-decoration: none;">Add to Cart</a></h4>
+                        <h4><a href="../cart/cart.html" style="color: grey; text-decoration: none;">Add to Cart</a></h4>
+                    </div>
+                </div>
+            
+                <div class="vegetable" id="vegetable9">
+                    <div class="veg_st">
+                        <h3 class="sale">Sale</h3>
+                        <div class="fav">
+                            <img src="../assets/carbon_favorite.png" alt="">
+                        </div>
+                    </div>
+                    <img src="../assets/images 1.png" alt="bell peppers">
+                    <h3 class="name_prd">Fresh Farm Grown Tomatoes</h3>
+                    <h3 class="wt">1kg</h3>
+                    <div class="farmer">
+                        <h5>By</h5>
+                        <h5 class="blue">Mark Don</h5>
+                    </div>
+                    <div class="review">
+                        <img src="../assets/Group 187.png" alt="review">
+                    </div>
+                    <div class="chat">
+                        <div class="no_rev">
+                            <img src="../assets/chat 1.png" alt="number of reviews">
+                            <h5>15 Reviews</h5>
+                        </div>
+                        <div class="cost">
+                            <h4>₹ <span class="price" id="price9">35.33</span></h4>
+                        </div>
+                    </div>
+                    <div class="quantity" onclick="toggleOptions(event, 35.33, 'options9', 'selected_quantity9')">
+                        <img src="../assets/ant-menu-submenu-arrow-down.png" alt="">
+                        <h4 style="color: rgb(110, 108, 108);">Quantity: <span class="selected_quantity" id="selected_quantity9" style="color: grey; text-decoration: none;">1</span></h4>
+                    </div>
+                    <ul class="options" id="options9" style="display: none;"></ul>
+                    <a href="../item details/item_details.html" style="text-decoration: none;">
+                        <div class="buynow" style="color: white;" onclick="itemDetails(35.33, parseInt(document.getElementById('selected_quantity9').innerText))">
+                            <h3 class="sale buy_now">Buy Now</h3>
+                        </div>
+                    </a>
+                    <div class="addtocart">
+                        <img src="../assets/Shopping cart.png" alt="add to cart">
+                        <h4><a href="../cart/cart.html" style="color: grey; text-decoration: none;">Add to Cart</a></h4>
                     </div>
                 </div>
             </div>            

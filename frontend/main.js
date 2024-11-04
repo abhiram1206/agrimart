@@ -58,18 +58,3 @@ function SignOut() {
     localStorage.removeItem('access_token'); 
     window.location.reload();
 }
-
-const typewriting = document.querySelector(".words");
-const textLoad = () => {
-    setTimeout(() => {
-        typewriting.textContent = "DOORSTEP";
-    }, 0);
-    setTimeout(() => {
-        typewriting.textContent = "KITCHEN";
-    }, 4000);
-    setTimeout(() => {
-        typewriting.textContent = "TABLE";
-    }, 8000);
-}
-textLoad();
-setInterval(textLoad, 12000);

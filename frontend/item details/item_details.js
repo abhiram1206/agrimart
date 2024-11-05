@@ -58,3 +58,15 @@ function SignOut() {
     localStorage.removeItem('access_token'); 
     window.location.reload();
 }
+
+function getItemDetails() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const price = parseFloat(urlParams.get('price'));
+    const quantity = parseInt(urlParams.get('quantity'));
+
+    // Fallback to handle NaN values
+    document.getElementById('item_det_price').textContent = isNaN(price) ? "N/A" : price.toFixed(2);
+    // document.getElementById('item_quantity').textContent = isNaN(quantity) ? "N/A" : quantity;
+}
+
+document.addEventListener('DOMContentLoaded', getItemDetails);

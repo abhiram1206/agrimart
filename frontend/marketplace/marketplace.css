@@ -254,6 +254,7 @@ nav {
     background-color: rgb(227, 226, 226);
     display: flex;
     margin-top: 170px;
+    height: 2300px;
 }
 
 .leftmarketsection{
@@ -420,4 +421,86 @@ nav {
     justify-content: center;
     align-items: center;
     gap: 10px;
+}
+
+/* Base container styles */
+.rightmarketsection_1,
+.rightmarketsection_2, .rightmarketsection_3{
+    position: relative;
+}
+
+/* Target all vegetable divs */
+.vegetable {
+    position: relative;
+    z-index: 1;
+}
+
+.vegetable:hover {
+    z-index: 2;
+}
+
+/* Quantity selector styling */
+.quantity {
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Dropdown options styling */
+.options {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 83%;
+    width: 90%;
+    max-height: 250px;
+    overflow-y: auto;
+    background-color: white;
+    padding: 0;
+    margin-top: 5px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* Custom scrollbar for the dropdown */
+.options::-webkit-scrollbar {
+    width: 6px;
+}
+
+.options::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.options::-webkit-scrollbar-thumb {
+    background: #4CAF50;  /* Green color */
+    border-radius: 3px;
+}
+
+.options::-webkit-scrollbar-thumb:hover {
+    background: #45a049;  /* Darker green on hover */
+}
+
+/* Firefox scrollbar */
+.options {
+    scrollbar-width: thin;
+    scrollbar-color: #4CAF50 #f1f1f1;
+}
+
+.options li {
+    padding: 8px 12px;
+    color: gray;
+    font-size: 15px;
+    cursor: pointer;
+    list-style: none;
+    transition: background-color 0.2s ease;
+    text-align: center;
+}
+
+.options li:hover {
+    background-color: #f2f2f2;
 }

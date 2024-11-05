@@ -58,3 +58,103 @@ function SignOut() {
     localStorage.removeItem('access_token'); 
     window.location.reload();
 }
+
+// Keep track of open dropdowns
+let currentOpenDropdown = null;
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function(event) {
+    const isDropdownClick = event.target.closest('.quantity');
+    const isOptionClick = event.target.closest('.options');
+    
+    if (!isDropdownClick && !isOptionClick && currentOpenDropdown) {
+        currentOpenDropdown.style.display = 'none';
+        const quantityDiv = currentOpenDropdown.previousElementSibling;
+        if (quantityDiv) {
+            quantityDiv.classList.remove('active');
+        }
+        currentOpenDropdown = null;
+    }
+});
+
+function toggleOptions(event, price, optionsId, quantityId) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const options = document.getElementById(optionsId);
+    const quantityDiv = event.currentTarget;
+
+    if (!options) {
+        console.error(`Element with ID ${optionsId} not found`);
+        return;
+    }
+
+    // Close currently open dropdown if it's different from the clicked one
+    if (currentOpenDropdown && currentOpenDropdown !== options) {
+        currentOpenDropdown.style.display = 'none';
+        const prevQuantityDiv = currentOpenDropdown.previousElementSibling;
+        if (prevQuantityDiv) {
+            prevQuantityDiv.classList.remove('active');
+        }
+    }
+
+    // Toggle current dropdown
+    const isDisplayed = options.style.display === 'block';
+    options.style.display = isDisplayed ? 'none' : 'block';
+    quantityDiv.classList.toggle('active');
+
+    // Update current open dropdown reference
+    currentOpenDropdown = isDisplayed ? null : options;
+
+    // Generate options if they haven't been created yet
+    if (!options.children.length) {
+        const quantities = Array.from({length: 30}, (_, i) => i + 1);
+        quantities.forEach(q => {
+            const li = document.createElement('li');
+            li.innerText = q;
+            li.onclick = function(e) {
+                e.stopPropagation();
+                updateQuantity(q, price, optionsId, quantityId);
+            };
+            options.appendChild(li);
+        });
+    }
+}
+
+function updateQuantity(quantity, price, optionsId, quantityId) {
+    // Update quantity display
+    const quantityElement = document.getElementById(quantityId);
+    if (quantityElement) {
+        quantityElement.innerText = quantity;
+    }
+
+    // Update price display
+    const priceId = `price${optionsId.charAt(optionsId.length - 1)}`;
+    const priceElement = document.getElementById(priceId);
+    if (priceElement) {
+        const totalPrice = (price * quantity).toFixed(2);
+        priceElement.innerText = totalPrice;
+    }
+
+    // Hide dropdown
+    const options = document.getElementById(optionsId);
+    if (options) {
+        options.style.display = 'none';
+        const quantityDiv = options.previousElementSibling;
+        if (quantityDiv) {
+            quantityDiv.classList.remove('active');
+        }
+    }
+    currentOpenDropdown = null;
+}
+
+function itemDetails(price, quantity) {
+    // Store selected item details in localStorage for use on the details page
+    const itemData = {
+        price: price,
+        quantity: quantity,
+        totalPrice: (price * quantity).toFixed(2)
+    };
+    localStorage.setItem('selectedItem', JSON.stringify(itemData));
+    return true; // Allow normal link navigation
+}

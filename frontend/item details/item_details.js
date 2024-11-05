@@ -59,14 +59,49 @@ function SignOut() {
     window.location.reload();
 }
 
-function getItemDetails() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const price = parseFloat(urlParams.get('price'));
-    const quantity = parseInt(urlParams.get('quantity'));
+// function getItemDetails() {
+//     const urlParams = new URLSearchParams(window.location.search);
+//     const price = parseFloat(urlParams.get('price'));
+//     const quantity = parseInt(urlParams.get('quantity'));
 
-    // Fallback to handle NaN values
-    document.getElementById('item_det_price').textContent = isNaN(price) ? "N/A" : price.toFixed(2);
-    // document.getElementById('item_quantity').textContent = isNaN(quantity) ? "N/A" : quantity;
+//     // Fallback to handle NaN values
+//     document.getElementById('item_det_price').textContent = isNaN(price) ? "N/A" : price.toFixed(2);
+//     // document.getElementById('item_quantity').textContent = isNaN(quantity) ? "N/A" : quantity;
+// }
+
+// document.addEventListener('DOMContentLoaded', getItemDetails);
+
+// Get the selected item data from localStorage
+const selectedItem = JSON.parse(localStorage.getItem('selectedItem'));
+
+if (selectedItem) {
+  // Display the selected item's details
+  const priceElement = document.getElementById('item-price');
+  const quantityElement = document.getElementById('item-quantity');
+  const totalPriceElement = document.getElementById('item-total-price');
+
+  if (priceElement) {
+    priceElement.textContent = `₹ ${selectedItem.price.toFixed(2)}`;
+  }
+
+  if (quantityElement) {
+    quantityElement.textContent = selectedItem.quantity;
+  }
+
+  if (totalPriceElement) {
+    totalPriceElement.textContent = `₹ ${selectedItem.totalPrice}`;
+  }
+
+  // Update the price and quantity display on the current page
+  const currentPriceElement = document.getElementById('price9');
+  const currentQuantityElement = document.getElementById('selected_quantity9');
+  if (currentPriceElement) {
+    currentPriceElement.textContent = selectedItem.price.toFixed(2);
+  }
+  if (currentQuantityElement) {
+    currentQuantityElement.textContent = selectedItem.quantity;
+  }
 }
 
-document.addEventListener('DOMContentLoaded', getItemDetails);
+// Add any additional functionality for the item details page
+// ...

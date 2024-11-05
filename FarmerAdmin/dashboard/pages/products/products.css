@@ -245,7 +245,81 @@ td button.edit-btn:hover {
     gap: 20px;
 }
 
+.add-product-btn{
+    width: 100%;
+    padding: 14px;
+    background-color: #68952D;
+    outline: 0;
+    border: 0;
+    color: #fff;
+    font-weight: 600;
+}
 
+.add-product-btn:hover{
+    background-color: #68952D95;
+}
+
+/* Dropdown for edit and delete buttons */
+.action-cell {
+    position: relative;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #fff;
+    min-width: 120px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+.dropdown-content button {
+    width: 100%;
+    padding: 10px 16px;
+    border: none;
+    background: none;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dropdown-content button:hover {
+    background-color: #f5f5f5;
+}
+
+.dropdown-content button.delete {
+    color: #68952D;
+}
+
+.dropdown-content button.update {
+    color: #68952D;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+    display: none;
+    z-index: 0;
+}
+
+.overlay.show {
+    display: block;
+}
 
 
 @media (max-width: 1232px) {

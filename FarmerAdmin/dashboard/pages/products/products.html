@@ -16,6 +16,35 @@
                 <img src="/Admin/assets/searchicon.png" alt="">
                 <input type="text" id="search" placeholder="Search">
             </div>
+            <button id="bulkUploadBtn" class="add-product-btn" style="width: 20%; border-radius: 50px;">Bulk Upload</button>
+            <!-- Bulk Upload Modal -->
+            <div id="bulkUploadModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Bulk Upload Products</h2>
+                        <span class="close close-bulk">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <div class="download-template">
+                            <p>Download the template file to see the required format:</p>
+                            <button id="downloadTemplate" class="template-btn">Download Template</button>
+                        </div>
+                        <form id="bulkUploadForm">
+                            <div class="inputs">
+                                <label for="bulkFile">Upload Excel File:</label>
+                                <input type="file" id="bulkFile" accept=".xlsx, .xls" required>
+                            </div>
+                            <div class="inputs">
+                                <label for="bulkImages">Upload Product Images (ZIP file):</label>
+                                <input type="file" id="bulkImages" accept=".zip" required>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="uploadBulk">Upload</button>
+                    </div>
+                </div>
+            </div>
             <div class="filter" id="filterButton">
                 <img src="/Admin/assets/Iconfiltericon.png" alt="">
             </div>
@@ -25,8 +54,7 @@
             <p>Filter Options:</p>
             <div class="product-filter filter">
                 <p>Product</p>
-                <div class="checkbox">
-                </div>
+                <div class="checkbox"></div>
             </div>
             <div class="joined">
                 <p>Joined At</p>
@@ -50,8 +78,7 @@
                         <th></th>
                     </tr>
                 </thead>
-                <tbody id="ProductDataTable">
-                </tbody>
+                <tbody id="ProductDataTable"></tbody>
                 <tfoot>
                     <tr>
                         <td colspan="7">
@@ -78,46 +105,72 @@
                 <span class="close">&times;</span>
             </div>
             <div class="modal-body">
-                <div class="inputs">
-                    <label for="productName">Product Name:</label>
-                    <input type="text" id="productName" placeholder="Enter product name">
-                </div>
-                <div class="inputs">
-                    <label for="productImages">Product Images:</label>
-                    <input type="file" id="productImages" name="productImages" accept="image/*">
-                </div>
-                <div class="inputs">
-                    <label for="category">Category:</label>
-                    <select id="category">
-                        <option value="">Select Category</option>
-                        <option value="Fruits">Fruits</option>
-                        <option value="Vegetables">Vegetables</option>
-                        <option value="Grains">Grains</option>
-                        <option value="Dairy">Dairy</option>
-                        <option value="Spices">Spices</option>
-                    </select>
-                </div>     
-                <div class="inputs">
-                    <label for="productName">Product Description:</label>
-                    <input type="text" id="productName" placeholder="Enter product Description">
-                </div>           
-                <div class="inputs">
-                    <label for="price">Price:</label>
-                    <input type="number" id="price" placeholder="Enter product price">
-                </div>
-                <div class="inputs">
-                    <label for="offerPrice">Offer Price:</label>
-                    <input type="number" id="offerPrice" placeholder="Enter offer price (optional)">
-                </div>
-                                
+                <form id="productform">
+                    <div class="inputs">
+                        <label for="productName">Product Name:</label>
+                        <input type="text" id="Name" placeholder="Enter product name">
+                    </div>
+                    <div class="inputs">
+                        <label for="productImages">Product Images:</label>
+                        <input type="file" id="productImage" name="productImage" accept="image/*">
+                    </div>
+                    <div class="inputs">
+                        <label for="category">Category:</label>
+                        <select id="Category">
+                            <option value="">Select Category</option>
+                            <option value="Fruits">Fruits</option>
+                            <option value="Vegetables">Vegetables</option>
+                            <option value="Grains">Grains</option>
+                            <option value="Dairy">Dairy</option>
+                            <option value="Spices">Spices</option>
+                        </select>
+                    </div>     
+                    <div class="inputs">
+                        <label for="productDescription">Product Description:</label>
+                        <input type="text" id="productDescription" placeholder="Enter product Description">
+                    </div>           
+                    <div class="inputs">
+                        <label for="price">Price:</label>
+                        <input type="number" id="price" placeholder="Enter product price">
+                    </div>
+                    <div class="inputs">
+                        <label for="offerPrice">Offer Price:</label>
+                        <input type="number" id="offerPrice" placeholder="Enter offer price (optional)">
+                    </div>
+                    <div class="inputs">
+                        <label for="quantity">Quantity Available:</label>
+                        <input type="number" id="quantity" placeholder="Enter Quantity Available (in kgs)">
+                    </div>
+                    <div class="inputs">
+                        <label for="harvestedDate">Harvested Date:</label>
+                        <input type="date" id="harvestedDate" placeholder="Enter Harvested Date">
+                    </div>
+                    <div class="inputs">
+                        <label for="selfLife">Self Life:</label>
+                        <input type="number" id="selfLife" placeholder="Enter Self Life (in days)">
+                    </div>
+                    <div class="inputs">
+                        <label for="packaging">Packaging:</label>
+                        <select id="packaging">
+                            <option value="">Select Packaging Type</option>
+                            <option value="crates">Crates</option>
+                            <option value="boxes">Boxes</option>
+                            <option value="bags">Bags</option>
+                        </select>
+                    </div>   
+                    <div class="inputs">
+                        <label for="minorder">Minimum Order Quantity:</label>
+                        <input type="number" id="minorder" placeholder="Enter Minimum Order Quantity (in kgs)">
+                    </div>  
+                </form>         
             </div>
             <div class="modal-footer">
                 <button id="saveProduct">Save</button>
             </div>
         </div>
     </div>
+    
 
     <script src="./products.js"></script>
 </body>
-
 </html>

@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
             itemsTotal += itemPrice * quantity;
         });
 
-// delivery free
+
         deliveryFee = itemsTotal > 1000 ? 0 : itemsTotal > 0 ? 120 : 0;
         deliveryEl.textContent = `₹${deliveryFee.toFixed(2)}`;
 

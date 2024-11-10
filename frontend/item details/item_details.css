@@ -8,6 +8,7 @@
 }
 body{
     background-color: #fff;
+    height: 1670px;
 }
 nav {
     display: flex;
@@ -461,3 +462,147 @@ nav {
     justify-content: center;
     align-items: center;
 }
+
+
+.rightmarketsection_2{
+    position: relative;
+}
+
+/* Target all vegetable divs */
+.vegetable {
+    position: relative;
+    z-index: 1;
+}
+
+.vegetable:hover {
+    z-index: 2;
+}
+
+/* Quantity selector styling */
+.quantity {
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Dropdown options styling */
+.options {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 83%;
+    width: 90%;
+    max-height: 250px;
+    overflow-y: auto;
+    background-color: white;
+    padding: 0;
+    margin-top: 5px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* Custom scrollbar for the dropdown */
+.options::-webkit-scrollbar {
+    width: 6px;
+}
+
+.options::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.options::-webkit-scrollbar-thumb {
+    background: #4CAF50;  /* Green color */
+    border-radius: 3px;
+}
+
+.options::-webkit-scrollbar-thumb:hover {
+    background: #45a049;  /* Darker green on hover */
+}
+
+/* Firefox scrollbar */
+.options {
+    scrollbar-width: thin;
+    scrollbar-color: #4CAF50 #f1f1f1;
+}
+
+.options li {
+    padding: 8px 12px;
+    color: gray;
+    font-size: 15px;
+    cursor: pointer;
+    list-style: none;
+    transition: background-color 0.2s ease;
+    text-align: center;
+}
+
+.options li:hover {
+    background-color: #f2f2f2;
+}
+
+.fav {
+    display: flex;
+    justify-content: center; /* Centers the image horizontally */
+    align-items: center; /* Centers the image vertically */
+}
+
+.fav img {
+    background-color: #508D4E;
+    width: 30px;
+    height: 30px;
+    border-radius: 30%;
+    padding: 5px;
+    margin-left: 240px; /* Remove this if it's causing alignment issues */
+    transition: transform 0.2s ease;
+    transform-origin: center; /* Ensures the scale effect originates from the center */
+}
+
+.fav img:hover {
+    transform: scale(1.2); /* Adds a subtle scale effect on hover */
+}
+
+.cost {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Adjust as needed */
+}
+
+.cost h4 {
+    margin: 0;
+    padding: 0;
+}
+.price {
+    padding: 0 5px; /* Adjust as needed */
+    margin: 0;
+}
+
+.cost h4 {
+    display: inline-block;
+    background: #f0f0f0; /* Background color similar to the example */
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.add_sub img{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #item_quant {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .add_sub img:hover
+  {
+    cursor: pointer;
+  }

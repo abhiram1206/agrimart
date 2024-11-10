@@ -342,15 +342,29 @@ nav {
 
 .veg_st{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
-.fav img{
+
+.fav {
+    display: flex;
+    justify-content: center; /* Centers the image horizontally */
+    align-items: center; /* Centers the image vertically */
+}
+
+.fav img {
     background-color: #508D4E;
-    width: auto;
-    border-radius: 50%;
-    padding: 4px;
-    margin-left: 240px;
+    width: 30px;
+    height: 30px;
+    border-radius: 30%;
+    padding: 5px;
+    margin-left: 240px; /* Remove this if it's causing alignment issues */
+    transition: transform 0.2s ease;
+    transform-origin: center; /* Ensures the scale effect originates from the center */
+}
+
+.fav img:hover {
+    transform: scale(1.2); /* Adds a subtle scale effect on hover */
 }
 
 .vegetable h3{

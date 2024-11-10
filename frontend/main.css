@@ -506,3 +506,49 @@ nav {
     background-color: #508D4E;
     border-radius: 2px;
 }
+
+
+.typewriting-effect {
+    width: 500px; /* Increase width slightly if 246px is cutting off text */
+    overflow: hidden; /* Prevent overflow */
+    position: relative;
+}
+
+.words {
+    font-size: 5.5rem;
+    font-weight: bold;
+    color: white;
+    position: relative;
+    display: inline-block; /* Ensures it takes only as much space as needed */
+    z-index: 1; /* Keeps the text above the animation box */
+}
+
+.text.words::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%; /* Adjusted to cover the entire width of the text */
+    background-color: #508D4E; /* Green background */
+    border-left: 3px solid white; /* Creates the typing cursor effect */
+    animation: animate 4s steps(12) infinite;
+    z-index: 0; /* Keeps it behind the text */
+}
+
+@keyframes animate {
+    0% {
+        left: 0;
+    }
+    40% {
+        left: 100%;
+    }
+    60% {
+        left: 100%;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+

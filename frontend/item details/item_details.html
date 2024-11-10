@@ -71,8 +71,14 @@
                 <h2> Fresh Farm Grown Tomatoes</h2>
                 <img src="../assets/Group 150.png" alt="">
             </div>
-            <div class="button">
-                <a href="#" style="color: white; text-decoration:none;"><h3>Quantity  + </h3></a>
+            <div class="button" id="item_quant">
+                <div class="add_sub" onclick="decrementQuantity()">
+                    <img src="../assets/minus.png" alt="">
+                </div>
+                <h3 style="color: white; text-decoration:none;">Quantity : <span id="quantity">1</span></h3>
+                <div class="add_sub" onclick="incrementQuantity()">
+                    <img src="../assets/plus-symbol-button.png" alt="">
+                </div>
             </div>
             <div class="price">
                 Your Price: ₹ <span id="item_det_price">24.33</span> &nbsp; 
@@ -144,11 +150,11 @@
     </div>
     
     <div class="rightmarketsection_2">
-        <div class="vegetable">
+        <div class="vegetable" id="vegetable1">
             <div class="veg_st">
                 <h3 class="sale">Sale</h3>
-                <div class="fav">
-                    <img src="../assets/carbon_favorite.png" alt="">
+                <div class="fav" onclick="toggleFavorite(this)">
+                    <img src="../assets/heart (3).png" alt="favorite" class="favorite-icon">
                 </div>
             </div>
             <div class="tomato">
@@ -169,16 +175,19 @@
                     <h5>15 Reviews</h5>
                 </div>
                 <div class="cost">
-                    <h4>₹24.33</h4>
+                    <h4>₹<span class="price" id="price1">24.33</span></h4>
                 </div>
             </div>
-            <div class="quantity">
+            <div class="quantity" onclick="toggleOptions(event, 24.33, 'options1', 'selected_quantity1')">
                 <img src="../assets/ant-menu-submenu-arrow-down.png" alt="">
-                <h4 style="color: rgb(110, 108, 108);"><a href="#" style="color: grey; text-decoration: none;">Quantity</a></h4>
+                <h4 style="color: rgb(110, 108, 108);">Quantity: <span class="selected_quantity" id="selected_quantity1" style="color: grey; text-decoration: none;">1</span></h4>
             </div>
-            <div class="buynow">
-                <h3 class="sale buy_now"><a href="#" style="color: white; text-decoration: none;">Buy Now</a></h3>
-            </div>
+            <ul class="options" id="options1" style="display: none;"></ul>
+                    <a href="../item details/item_details.html" style="text-decoration: none;">
+                        <div class="buynow" style="color: white;" onclick="itemDetails(25.33, parseInt(document.getElementById('selected_quantity1').innerText))">
+                            <h3 class="sale buy_now">Buy Now</h3>
+                        </div>
+                    </a>
             <div class="addtocart">
                 <img src="../assets/Shopping cart.png" alt="add to cart">
                 <h4><a href="#" style="color: grey; text-decoration: none;">Add to Cart</a></h4>
@@ -186,11 +195,11 @@
         </div>
     
         <!-- Replicate for each vegetable -->
-        <div class="vegetable">
+        <div class="vegetable" id="vegetable2">
             <div class="veg_st">
                 <h3 class="sale">Sale</h3>
-                <div class="fav">
-                    <img src="../assets/carbon_favorite.png" alt="">
+                <div class="fav" onclick="toggleFavorite(this)">
+                    <img src="../assets/heart (3).png" alt="favorite" class="favorite-icon">
                 </div>
             </div>
             <div class="tomato">
@@ -208,30 +217,33 @@
             <div class="chat">
                 <div class="no_rev">
                     <img src="../assets/chat 1.png" alt="number of reviews">
-                    <h5>15 Reviews</h5>
+                    <h5>10 Reviews</h5>
                 </div>
                 <div class="cost">
-                    <h4>₹24.33</h4>
+                    <h4>₹<span class="price" id="price2">24.33</span></h4>
                 </div>
             </div>
-            <div class="quantity">
+            <div class="quantity" onclick="toggleOptions(event, 30.33, 'options2', 'selected_quantity2')">
                 <img src="../assets/ant-menu-submenu-arrow-down.png" alt="">
-                <h4 style="color: rgb(110, 108, 108);"><a href="#" style="color: grey; text-decoration: none;">Quantity</a></h4>
+                <h4 style="color: rgb(110, 108, 108);">Quantity: <span class="selected_quantity" id="selected_quantity2" style="color: grey; text-decoration: none;">1</span></h4>
             </div>
-            <div class="buynow">
-                <h3 class="sale buy_now"><a href="#" style="color: white; text-decoration: none;">Buy Now</a></h3>
-            </div>
+            <ul class="options" id="options2" style="display: none;"></ul>
+                    <a href="../item details/item_details.html" style="text-decoration: none;">
+                        <div class="buynow" style="color: white;" onclick="itemDetails(25.33, parseInt(document.getElementById('selected_quantity2').innerText))">
+                            <h3 class="sale buy_now">Buy Now</h3>
+                        </div>
+                    </a>
             <div class="addtocart">
                 <img src="../assets/Shopping cart.png" alt="add to cart">
                 <h4><a href="#" style="color: grey; text-decoration: none;">Add to Cart</a></h4>
             </div>
         </div>
 
-        <div class="vegetable">
+        <div class="vegetable" id="vegetable3">
             <div class="veg_st">
                 <h3 class="sale">Sale</h3>
-                <div class="fav">
-                    <img src="../assets/carbon_favorite.png" alt="">
+                <div class="fav" onclick="toggleFavorite(this)">
+                    <img src="../assets/heart (3).png" alt="favorite" class="favorite-icon">
                 </div>
             </div>
             <div class="tomato">
@@ -249,19 +261,22 @@
             <div class="chat">
                 <div class="no_rev">
                     <img src="../assets/chat 1.png" alt="number of reviews">
-                    <h5>15 Reviews</h5>
+                    <h5>19 Reviews</h5>
                 </div>
                 <div class="cost">
-                    <h4>₹24.33</h4>
+                    <h4>₹<span class="price" id="price3">35.33</span></h4>
                 </div>
             </div>
-            <div class="quantity">
+            <div class="quantity" onclick="toggleOptions(event, 25.33, 'options3', 'selected_quantity3')">
                 <img src="../assets/ant-menu-submenu-arrow-down.png" alt="">
-                <h4 style="color: rgb(110, 108, 108);"><a href="#" style="color: grey; text-decoration: none;">Quantity</a></h4>
+                <h4 style="color: rgb(110, 108, 108);">Quantity: <span class="selected_quantity" id="selected_quantity3" style="color: grey; text-decoration: none;">1</span></h4>
             </div>
-            <div class="buynow">
-                <h3 class="sale buy_now"><a href="#" style="color: white; text-decoration: none;">Buy Now</a></h3>
-            </div>
+            <ul class="options" id="options3" style="display: none;"></ul>
+                    <a href="../item details/item_details.html" style="text-decoration: none;">
+                        <div class="buynow" style="color: white;" onclick="itemDetails(25.33, parseInt(document.getElementById('selected_quantity3').innerText))">
+                            <h3 class="sale buy_now">Buy Now</h3>
+                        </div>
+                    </a>
             <div class="addtocart">
                 <img src="../assets/Shopping cart.png" alt="add to cart">
                 <h4><a href="#" style="color: grey; text-decoration: none;">Add to Cart</a></h4>

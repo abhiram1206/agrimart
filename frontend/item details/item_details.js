@@ -59,49 +59,137 @@ function SignOut() {
     window.location.reload();
 }
 
-// function getItemDetails() {
-//     const urlParams = new URLSearchParams(window.location.search);
-//     const price = parseFloat(urlParams.get('price'));
-//     const quantity = parseInt(urlParams.get('quantity'));
+let currentOpenDropdown = null;
 
-//     // Fallback to handle NaN values
-//     document.getElementById('item_det_price').textContent = isNaN(price) ? "N/A" : price.toFixed(2);
-//     // document.getElementById('item_quantity').textContent = isNaN(quantity) ? "N/A" : quantity;
-// }
+// Close dropdown when clicking outside
+document.addEventListener('click', function(event) {
+    const isDropdownClick = event.target.closest('.quantity');
+    const isOptionClick = event.target.closest('.options');
+    
+    if (!isDropdownClick && !isOptionClick && currentOpenDropdown) {
+        currentOpenDropdown.style.display = 'none';
+        const quantityDiv = currentOpenDropdown.previousElementSibling;
+        if (quantityDiv) {
+            quantityDiv.classList.remove('active');
+        }
+        currentOpenDropdown = null;
+    }
+});
 
-// document.addEventListener('DOMContentLoaded', getItemDetails);
+function toggleOptions(event, price, optionsId, quantityId) {
+    event.preventDefault();
+    event.stopPropagation();
+    const options = document.getElementById(optionsId);
+    const quantityDiv = event.currentTarget;
+    if (!options) {
+        console.error(`Element with ID ${optionsId} not found`);
+        return;
+    }
+    // Close currently open dropdown if it's different from the clicked one
+    if (currentOpenDropdown && currentOpenDropdown !== options) {
+        currentOpenDropdown.style.display = 'none';
+        const prevQuantityDiv = currentOpenDropdown.previousElementSibling;
+        if (prevQuantityDiv) {
+            prevQuantityDiv.classList.remove('active');
+        }
+    }
+    // Toggle current dropdown
+    const isDisplayed = options.style.display === 'block';
+    options.style.display = isDisplayed ? 'none' : 'block';
+    quantityDiv.classList.toggle('active');
 
-// Get the selected item data from localStorage
-const selectedItem = JSON.parse(localStorage.getItem('selectedItem'));
+    // Update current open dropdown reference
+    currentOpenDropdown = isDisplayed ? null : options;
 
-if (selectedItem) {
-  // Display the selected item's details
-  const priceElement = document.getElementById('item-price');
-  const quantityElement = document.getElementById('item-quantity');
-  const totalPriceElement = document.getElementById('item-total-price');
-
-  if (priceElement) {
-    priceElement.textContent = `₹ ${selectedItem.price.toFixed(2)}`;
-  }
-
-  if (quantityElement) {
-    quantityElement.textContent = selectedItem.quantity;
-  }
-
-  if (totalPriceElement) {
-    totalPriceElement.textContent = `₹ ${selectedItem.totalPrice}`;
-  }
-
-  // Update the price and quantity display on the current page
-  const currentPriceElement = document.getElementById('price9');
-  const currentQuantityElement = document.getElementById('selected_quantity9');
-  if (currentPriceElement) {
-    currentPriceElement.textContent = selectedItem.price.toFixed(2);
-  }
-  if (currentQuantityElement) {
-    currentQuantityElement.textContent = selectedItem.quantity;
-  }
+    // Generate options if they haven't been created yet
+    if (!options.children.length) {
+        const quantities = Array.from({length: 30}, (_, i) => i + 1);
+        quantities.forEach(q => {
+            const li = document.createElement('li');
+            li.innerText = q;
+            li.onclick = function(e) {
+                e.stopPropagation();
+                updateQuantity(q, price, optionsId, quantityId);
+            };
+            options.appendChild(li);
+        });
+    }
 }
 
-// Add any additional functionality for the item details page
-// ...
+function updateQuantity(quantity, price, optionsId, quantityId) {
+    // Update quantity display
+    const quantityElement = document.getElementById(quantityId);
+    if (quantityElement) {
+        quantityElement.innerText = quantity;
+    }
+
+    // Update price display
+    const priceId = `price${optionsId.charAt(optionsId.length - 1)}`;
+    const priceElement = document.getElementById(priceId);
+    if (priceElement) {
+        const totalPrice = (price * quantity).toFixed(2);
+        priceElement.innerText = totalPrice;
+    }
+
+    // Hide dropdown
+    const options = document.getElementById(optionsId);
+    if (options) {
+        options.style.display = 'none';
+        const quantityDiv = options.previousElementSibling;
+        if (quantityDiv) {
+            quantityDiv.classList.remove('active');
+        }
+    }
+    currentOpenDropdown = null;
+}
+
+function itemDetails(price, quantity) {
+    // Store selected item details in localStorage for use on the details page
+    const itemData = {
+        price: price,
+        quantity: quantity,
+        totalPrice: (price * quantity).toFixed(2)
+    };
+    localStorage.setItem('selectedItem', JSON.stringify(itemData));
+    return true; // Allow normal link navigation
+}
+
+function toggleFavorite(element) {
+    const img = element.querySelector('.favorite-icon');
+    const yellowHeartSrc = "../assets/heart (5).png";
+    const defaultSrc = "../assets/heart (3).png";
+  
+    // Toggle the image source and update the padding
+    if (img.src.includes(yellowHeartSrc)) {
+      img.src = defaultSrc;
+      img.style.padding = "10px";
+    } else {
+      img.src = yellowHeartSrc;
+      img.style.padding = "5px";
+    }
+  }
+
+
+  const priceElement = document.getElementById('item_det_price');
+    const quantityElement = document.getElementById('quantity');
+    const price = 24.33;
+    let quantity = 1;
+
+    function incrementQuantity() {
+      quantity++;
+      quantityElement.textContent = quantity;
+      updatePrice();
+    }
+
+    function decrementQuantity() {
+      if (quantity > 1) {
+        quantity--;
+        quantityElement.textContent = quantity;
+        updatePrice();
+      }
+    }
+
+    function updatePrice() {
+      const totalPrice = price * quantity;
+      priceElement.textContent = totalPrice.toFixed(2);
+    }

@@ -157,11 +157,7 @@ function itemDetails(price, quantity) {
     };
     localStorage.setItem('selectedItem', JSON.stringify(itemData));
     return true; // Allow normal link navigation
-}
-
-
-
-
+}   
 
 
 // products fetching from backend api
@@ -232,3 +228,70 @@ function loadProducts(data){
         productDataDisplay.insertAdjacentHTML('beforeend', row);
     })
 }
+
+// function toggleFavorite(element) {
+//     const img = element.querySelector('.favorite-icon');
+//     const defaultSrc = "../assets/heart (4).png";
+//     const yellowHeartSrc = "../assets/heart (3).png";
+  
+//     // Toggle the image source and update the padding
+//     if (img.src.includes(defaultSrc)) {
+//       img.src = yellowHeartSrc;
+//     //   img.style.padding = "500px";
+//     } else {
+//       img.src = defaultSrc;
+//     //   img.style.padding = "5px";
+//     }
+  
+//     // // Add a data attribute to track the current state
+//     // element.dataset.isFavorite = img.src.includes(yellowHeartSrc);
+//   }
+
+// function toggleFavorite(element) {
+//     const img = element.querySelector('.favorite-icon');
+//     const defaultSrc = "../assets/heart (4).png";
+//     const yellowHeartSrc = "../assets/heart (3).png";
+  
+//     // Toggle the image source and update the padding
+//     if (img.src.includes(defaultSrc)) {
+//       img.src = yellowHeartSrc;
+//       img.style.padding = "10px";
+//     } else {
+//       img.src = defaultSrc;
+//       img.style.padding = "5px";
+//     }
+//   }
+
+//   function toggleFavorite(element) {
+//     const img = element.querySelector('.favorite-icon');
+//     const yellowHeartSrc = "../assets/heart (4).png";
+//     const defaultSrc = "../assets/heart (3).png";
+  
+//     // Toggle the image source and update the padding
+//     if (img.src === yellowHeartSrc) 
+//     {
+//       img.src = defaultSrc;
+//       img.style.padding = "10px";
+//     } 
+//     else  {
+//       img.src = yellowHeartSrc;
+//       img.style.padding = "5px";
+//     }
+//   }
+
+
+function toggleFavorite(element) {
+    const img = element.querySelector('.favorite-icon');
+    const yellowHeartSrc = "../assets/heart (5).png";
+    const defaultSrc = "../assets/heart (3).png";
+  
+    // Toggle the image source and update the padding
+    if (img.src.includes(yellowHeartSrc)) {
+      img.src = defaultSrc;
+      img.style.padding = "10px";
+    } else {
+      img.src = yellowHeartSrc;
+      img.style.padding = "5px";
+    }
+  }
+
